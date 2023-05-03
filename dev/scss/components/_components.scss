@@ -1,0 +1,37 @@
+@use '../abstracts/vars';
+@use '../base/typography';
+@use '../abstracts/mixins.scss';
+
+.recipe-btn{
+    @include mixins.btn(vars.$clr-dark, vars.$clr-white);
+}
+
+.active {
+    background-color: hsl(36, 100%, 50%)!important;
+    border-radius: 1.25rem!important;
+}
+
+.filter-bg {
+    background-color: hsl(210, 20%, 94%);
+    border-radius: 30px;
+    padding: 0 50px;
+    text-align: center;
+}
+
+.search-btn {
+    padding: 5px 10px;
+    background-color:  hsl(210, 20%, 94%);
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+    transition: .5s;
+}
+
+.search-btn:hover {
+    background-color: hsl(36, 100%, 50%);
+    color: #fff;
+}
+
+.bg-footer {
+    background-color: hsl(36, 100%, 50%);
+    padding: 35px 0;
+}

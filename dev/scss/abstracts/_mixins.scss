@@ -1,0 +1,26 @@
+@use '../abstracts/vars';
+
+@mixin set-color($fcolor) {
+    color: $fcolor;
+}
+
+@mixin set-fonts($ffamily, $fweight, $fsize, $fcolor:vars.$clr-negro-001) {
+    font-family: $ffamily;
+    font-weight: $fweight;
+    font-size: $fsize;
+    color: $fcolor;
+}
+
+@mixin btn($bg, $color){
+    width: 100vw;
+    position: relative;
+    display: table-cell;
+    text-align: center;
+    padding: 1rem 2rem;
+    border-radius: .625rem;
+    font-family: vars.$ff;
+    font-size: vars.$fs-xxxsm;
+    background-color: $bg;
+    color: $color;
+    text-decoration: none;
+}

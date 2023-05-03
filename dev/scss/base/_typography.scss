@@ -1,0 +1,95 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+@use '../abstracts/media-queries';
+
+.text-mostaza {
+    @include mixins.set-color(vars.$clr-mostaza-001);
+}
+
+.text-black {
+    @include mixins.set-color(vars.$clr-negro-001);
+}
+
+.text-white {
+    @include mixins.set-color(vars.$clr-white);
+}
+
+.forms-link-hl {
+    @include mixins.set-color(vars.$clr-verde-002);
+}
+
+.title-sm2{
+    @include mixins.set-fonts(vars.$ff, vars.$fw-bold, vars.$fs-rg2);
+}
+
+.title-sm3{
+    @include mixins.set-fonts(vars.$ff, vars.$fw-bold, vars.$fs-rg1);
+}
+.title-md0{
+    @include mixins.set-fonts(vars.$ff, vars.$fw-semibold, vars.$fs-md1);
+}
+
+.title-md1{
+    @include mixins.set-fonts(vars.$ff, vars.$fw-semibold, vars.$fs-md1);
+}
+
+.title-md2{
+    @include mixins.set-fonts(vars.$ff, vars.$fw-light, vars.$fs-md2);
+}
+
+.title-md3{
+    @include mixins.set-fonts(vars.$ff, vars.$fw-med, vars.$fs-md3);
+}
+
+.title-mdxl1{
+    @include mixins.set-fonts(vars.$ff, vars.$fw-semibold, vars.$fs-lg);
+    color: aqua
+}
+
+.title-mdxl2{
+    @include mixins.set-fonts(vars.$ff, vars.$fw-bold, vars.$fs-lg);
+}
+
+.title-mdxl3{
+    @include mixins.set-fonts(vars.$ff, vars.$fw-extrabold, vars.$fs-lg);
+}
+
+.title-lg{
+    @include mixins.set-fonts(vars.$ff, vars.$fw-bold, vars.$fs-lg2);
+}
+
+.title-xlg{
+    @include mixins.set-fonts(vars.$ff, vars.$fw-semibold, vars.$fs-xlg1);
+}
+
+.title-xlgsb{
+    @include mixins.set-fonts(vars.$ff, vars.$fw-light, vars.$fs-xlg1);
+}
+
+.title-white {
+    @include mixins.set-fonts(vars.$ff, vars.$fw-bold, vars.$fs-lg1, vars.$clr-white);
+    margin-left: 25px;
+}
+
+.title-options {
+    @include mixins.set-fonts(vars.$ff, vars.$fw-bold, vars.$fs-lg1, vars.$clr-negro-001);
+    margin-left: 25px;
+}
+
+.forms-link {
+    @include mixins.set-fonts(vars.$ff, vars.$fw-reg, vars.$fs-rg1, vars.$clr-negro-001);
+    text-decoration: none;
+}
+
+
+
+.subtitle {
+    font-size: 1rem;
+    line-height: 1.875rem;
+}
+
+.subtitle-filter {
+    @include mixins.set-color(vars.$clr-verde-002);
+    font-size: 1.5625rem;
+    font-weight: 600;
+}

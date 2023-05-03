@@ -260,7 +260,7 @@
                         <input class="search-input" type="search" name="keyword" placeholder="¿Qué quieres cocinar hoy?"
                             aria-label="Search">
                         <button class="search-button" type="submit"></button>
-                    </form>
+                    </form>btn
                 </div>
             </nav>
 
@@ -353,7 +353,7 @@
                                                 <a class='lbl lunch' href='#'>".$recipe["recipe_category"]."</a>
                                                 <a class='lbl ".strtolower($recipe["recipe_level"])."' href='#'>".$recipe["recipe_level"]."</a>
                                             </div>
-                                            <a href='details.php?id_recipe=".$recipe["id_recipe"]."' class='btn-base btn-green mt-5'>Ver receta</a>
+                                            <a href='details.php?id_recipe=".$recipe["id_recipe"]."' class='btn-green-xl mt-5'>Ver receta</a>
                                         </div>
                                     </div>
                                 </div>

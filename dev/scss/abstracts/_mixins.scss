@@ -1,5 +1,6 @@
 @use '../abstracts/vars';
 
+/* Typography */
 @mixin set-color($fcolor) {
     color: $fcolor;
 }
@@ -10,17 +11,210 @@
     font-size: $fsize;
     color: $fcolor;
 }
+/* Typography */
 
-@mixin btn($bg, $color){
-    width: 100vw;
-    position: relative;
-    display: table-cell;
-    text-align: center;
-    padding: 1rem 2rem;
-    border-radius: .624rem;
-    font-family: vars.$ff;
-    font-size: vars.$fs-xxxsm;
-    background-color: $bg;
-    color: $color;
+/* Buttons */
+@mixin btn-base($fsize, $fweight){
+    display: inline-flex;
+    border-radius: 1.25rem;
+    border: none;
+    padding: .4375rem 1.25rem;
+    font-size: $fsize;
+    font-weight: $fweight;
     text-decoration: none;
 }
+
+@mixin btn-xl($fsize, $fweight){
+    border-radius: 1.25rem;
+    padding: .1875rem 1.25rem;
+    font-size: $fsize;
+    font-weight: $fweight;
+    text-decoration: none;
+}
+
+@mixin btn-style($color, $bcolor, $bg, $colorhover, $bghover){
+    color: $color;
+    border-color: $bcolor;
+    background: $bg;
+    text-decoration: none;
+
+    &:hover {
+        color: $colorhover;
+        background: $bghover;
+        transition: all .2s ease;
+        cursor: pointer;
+    }
+}
+/* Buttons */
+
+/* Cards */
+@mixin card-base(){
+    display: flex;
+    justify-content: center;
+    margin-top: 18.75rem;
+}
+
+@mixin card-bg(){
+    width: 13.75rem;
+    height: 13.125rem;
+    border-radius: 1.875rem;
+    background: black;
+    position: relative;
+}
+
+@mixin card-image(){
+    width: 220px;
+    height: 150px;
+    border-radius: 15px;
+    object-fit: cover;
+    position: absolute;
+}
+
+@mixin card-data(){
+    bottom: 0px;
+    width: 220px;
+    height: 80px;
+    border-radius: 15px;
+    background: #231F20;
+    position: absolute;
+}
+
+@mixin card-10($bgcolor){
+    height: 22rem;
+    width: 22rem;
+    border-radius: 1.25rem;
+    display: flex;
+    background: $bgcolor;
+}
+
+@mixin card-img(){
+    width: 267px;
+    height: 254px;
+    z-index: 1;
+}
+
+@mixin upload-card(){
+    scale: 1.1;
+    margin: 3.625rem 3.375rem 4.375rem 3.375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .15s ease-in-out;
+}
+@mixin featured-div(){
+    display: flex!important;
+    justify-content: space-between;
+    padding-left: 0!important;
+    margin: 0!important;
+}
+
+@mixin featured-title(){
+    font-size: 18px;
+    color: #000;
+}
+
+@mixin featured(){
+    width: 30px!important;
+    height: 30px!important;
+    margin-left: 0!important;
+    padding: 0!important;
+}
+
+@mixin featured-recipe($color, $bgcolor){
+    font-size: 14px;
+    margin: 0;
+    padding: 6px;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    color: $color;
+    background: $bgcolor;
+    border-radius: 14px 14px 0 0;
+}
+
+@mixin card-title(){
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: #fff;
+}
+
+@mixin card-info(){
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 15px 0 15px;
+    position: absolute;
+}
+
+@mixin card-time(){
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+}
+
+@mixin card-likes(){
+    text-align: center;
+    width: 2.25rem;
+}
+
+@mixin hearth($fsize, $color){
+    font-size: $fsize;
+    font-weight: 400;
+    color: color;
+}
+
+@mixin card-options($color){
+    font-size: 12px;
+    font-weight: 400;
+    color: $color;
+}
+
+@mixin like-count($fsize){
+    font-size: $fsize;
+    font-weight: 600;
+    margin-top: 3px;
+    text-align: center;
+    color: #fff;
+}
+
+@mixin revision-options(){
+    font-size: 2rem;
+    width: 100%;
+    position: absolute;
+    top: 215px;
+}
+
+@mixin revision-buttons($color){
+    color: $color;
+    cursor: pointer;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    background: none;
+    border: none;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        zoom: 1.05;
+    }
+}
+
+@mixin search-button($color, $hcolor){
+    color: $color;
+    font-size: 25px;
+    background-color: #fff;
+    width: 60px;
+    height: 2.5rem;
+    padding: 5px 30px 5px 5px;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    border: none;
+    border-radius: 0 20px 20px 0;
+
+    &:hover {
+        color: $hcolor;
+    }
+}
+/* Cards */
+

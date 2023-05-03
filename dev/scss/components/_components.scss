@@ -1,37 +1,130 @@
 @use '../abstracts/vars';
 @use '../base/typography';
 @use '../abstracts/mixins.scss';
+@use '../abstracts/media-queries';
 
-.recipe-btn{
-    @include mixins.btn(vars.$clr-dark, vars.$clr-white);
-}
+/* Buttons */
+    .btn-green {
+        @include mixins.btn-base(vars.$fs-rg2, vars.$fw-semibold);
+        @include mixins.btn-style(vars.$clr-negro-001, vars.$clr-verde-001, vars.$clr-verde-001, vars.$clr-white, vars.$clr-terracota-001);
+    }
 
-.active {
-    background-color: hsl(36, 100%, 50%)!important;
-    border-radius: 1.25rem!important;
-}
+    .btn-green-xl {
+        @include mixins.btn-base(vars.$fs-md3, vars.$fw-semibold);
+        @include mixins.btn-style(vars.$clr-negro-001, vars.$clr-verde-001, vars.$clr-verde-001, vars.$clr-white, vars.$clr-terracota-001);
+    }
 
-.filter-bg {
-    background-color: hsl(210, 20%, 94%);
-    border-radius: 30px;
-    padding: 0 50px;
-    text-align: center;
-}
+    .btn-mostaza {
+        @include mixins.btn-base(vars.$fs-rg2, vars.$fw-semibold);
+        @include mixins.btn-style(vars.$clr-white, vars.$clr-mostaza-001, vars.$clr-mostaza-001, vars.$clr-white, vars.$clr-mostaza-002);
+    }
+/* Buttons */
 
-.search-btn {
-    padding: 5px 10px;
-    background-color:  hsl(210, 20%, 94%);
-    border-radius: 0px 10px 10px 0px;
-    border: none;
-    transition: .5s;
-}
+/* Cards */
+    .base {
+        @include mixins.card-base();
+    }
 
-.search-btn:hover {
-    background-color: hsl(36, 100%, 50%);
-    color: #fff;
-}
+    .card-bg {
+        @include mixins.card-bg();
+    }
 
-.bg-footer {
-    background-color: hsl(36, 100%, 50%);
-    padding: 35px 0;
-}
+    .card-image {
+        @include mixins.card-image();
+    }
+
+    .card-data {
+        @include mixins.card-data();
+    }
+
+    .card-10 {
+        @include mixins.card-10(vars.$clr-verde-001);
+    }
+
+    .card-img {
+        @include mixins.card-img();
+    }
+
+    .upload-card {
+        @include mixins.upload-card();
+    }
+
+    .featured-div {
+        @include mixins.featured-div();
+    }
+
+    .featured-title {
+        @include mixins.featured-title();
+    }
+
+    .featured {
+        @include mixins.featured();
+    }
+
+    .featured-recipe {
+        @include mixins.featured-recipe(vars.$clr-white, vars.$clr-verde-002);
+    }
+
+    .card-info {
+        @include mixins.card-info();
+    }
+
+    .card-title {
+        @include mixins.card-title();
+    }
+
+    .card-time {
+        @include mixins.card-time();
+    }
+
+    .like:hover {
+        color: var(--clr-rojo-001);
+    }
+
+    .card-options {
+        @include mixins.card-options(vars.$clr-white);
+    }
+
+    .card-likes {
+        @include mixins.card-likes();
+    }
+
+    .hearth {
+        @include mixins.hearth(vars.$fs-sm2, vars.$clr-white);
+    }
+
+    .hearth-xl {
+        @include mixins.hearth(vars.$fs-md1, vars.$clr-white);
+    }
+
+    .like-count {
+        @include mixins.like-count(vars.$fs-sm2);
+    }
+
+    .like-count-xl {
+        @include mixins.like-count(vars.$fs-md1);
+    }
+
+    .revision-options {
+        @include mixins.revision-options();
+    }
+
+    .accept {
+        margin-right: 5px;
+        @include mixins.revision-buttons(vars.$clr-white);
+    }
+
+    .decline {
+        margin-left: 5px;
+        @include mixins.revision-buttons(vars.$clr-rojo-001);
+    }
+
+    .search-button {
+        @include mixins.search-button(vars.$clr-negro-001, vars.$clr-verde-002);
+    }
+
+    .edit:hover {
+        color: var(--clr-verde-001);
+    }
+/* Cards */
+

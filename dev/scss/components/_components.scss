@@ -3,6 +3,30 @@
 @use '../abstracts/mixins.scss';
 @use '../abstracts/media-queries';
 
+/* Lines */
+    .border-line {
+        @include mixins.border-line(.15rem, vars.$clr-negro-001);
+    }
+
+    .border-nav-line {
+        @include mixins.border-line(.19rem, vars.$clr-verde-001);
+    }
+/* lines */
+
+/* Forms */
+    .bg-base {
+        @include mixins.bg-base("../../imgs/bg-base.svg");
+    }
+
+    .bg-dark-base {
+        @include mixins.bg-base("../../imgs/bg-base.svg");
+    }
+
+    .details-bg-dark-base {
+        @include mixins.details-bg-dark-base;
+    }
+/* Forms */
+
 /* Buttons */
     .btn-green {
         @include mixins.btn-base(vars.$fs-rg2, vars.$fw-semibold);
@@ -111,7 +135,7 @@
 
     .accept {
         margin-right: 5px;
-        @include mixins.revision-buttons(vars.$clr-white);
+        @include mixins.revision-buttons(vars.$clr-verde-002);
     }
 
     .decline {
@@ -119,12 +143,190 @@
         @include mixins.revision-buttons(vars.$clr-rojo-001);
     }
 
-    .search-button {
+    /*.search-button {
         @include mixins.search-button(vars.$clr-negro-001, vars.$clr-verde-002);
+    }*/
+
+    .edit {
+        @include mixins.delete(vars.$fs-md1, vars.$clr-white, vars.$clr-verde-002);
     }
 
-    .edit:hover {
-        color: var(--clr-verde-001);
+    .delete {
+        @include mixins.delete(vars.$fs-md1, vars.$clr-white, vars.$clr-rojo-001);
+    }
+
+    .edit-title {
+        margin-top: 12.5rem;
+    }
+
+    .card-labels {
+        @include mixins.card-labels();
+    }
+
+    .lbl {
+        @include mixins.label(vars.$fs-xsm2, vars.$clr-white);
+    }
+
+    .category-base {
+        @include mixins.category-base(vars.$clr-terracota-001);
+    }
+
+    .todas {
+        @include mixins.todas(vars.$clr-terracota-001);
+    }
+
+    .facil {
+        @include mixins.dificulty(vars.$clr-verde-002);
+    }
+
+    .intermedio {
+        @include mixins.dificulty(vars.$clr-mostaza-001);
+    }
+
+    .avanzado {
+        @include mixins.dificulty(vars.$clr-rojo-001);
+    }
+
+    .filtro-facil {
+        @include mixins.dificulty-filter(vars.$clr-verde-002);
+    }
+
+    .filtro-intermedio {
+        @include mixins.dificulty-filter(vars.$clr-mostaza-001);
+    }
+
+    .filtro-avanzado {
+        @include mixins.dificulty-filter(vars.$clr-rojo-001);
+    }
+
+    .delete-ingredient {
+        @include mixins.delete-ingredient(vars.$clr-white, vars.$clr-rojo-001, vars.$clr-rojo-002);
+    }
+
+    .recipe-card {
+        @include mixins.recipe-card();
+    }
+
+    .recipe-card-1 {
+        @include mixins.recipe-card-1();
+    }
+
+    .recipe-details-image {
+        @include mixins.recipe-details-image();
+    }
+
+    .details-card-bg {
+        @include mixins.details-card-bg();
+    }
+
+    .details-image {
+        @include mixins.details-image();
+    }
+
+    .details-data {
+        @include mixins.details-data();
+    }
+
+    .details-info {
+        @include mixins.details-info();
+    }
+
+    .details-labels {
+        @include mixins.details-labels();
+    }
+
+    .details-card {
+        @include mixins.details-card;
+    }
+
+    .details-text {
+        @include mixins.details-text;
+    }
+
+    .details-text {
+        @include mixins.details-time;
     }
 /* Cards */
+
+    .space-line {
+        @include mixins.space-line;
+    }
+
+    .w-space-line {
+        @include mixins.w-space-line;
+    }
+
+/* Upload Input */
+
+.add-recipes-container {
+    @include mixins.add-recipes-container;
+}
+
+.file-upload {
+    @include mixins.file-upload;
+}
+
+.file-upload-btn {
+    @include mixins.file-upload-btn;
+}
+
+.file-upload-content {
+    @include mixins.file-upload-content;
+}
+
+.file-upload-input {
+    @include mixins.file-upload-input;
+}
+
+.image-upload-wrap {
+    @include mixins.image-upload-wrap;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+    background: #1AA059;
+    border-radius: 30px;
+}
+
+.file-upload-image {
+    @include mixins.file-upload-image;
+}
+
+.remove-image {
+    @include mixins.remove-image;
+}
+
+.drag-text {
+    @include mixins.drag-text;
+}
+
+/* Input Data Recipe */
+
+.input-data-recipe {
+    @include mixins.input-data-recipe();
+}
+
+.input-ingredients {
+    @include mixins.input-w-h(363px, 40px);
+}
+
+.input-s {
+    @include mixins.input-w-h(196px, 60px);
+}
+
+.input-m {
+    @include mixins.input-w-h(418px, 60px);
+}
+
+.input-l {
+    @include mixins.input-w-h(310px, 60px);
+}
+
+.input-xl {
+    @include mixins.input-w-h(418px, 150px);
+}
+
+.input-2xl {
+    @include mixins.input-w-h(650px, 160px);
+}
 

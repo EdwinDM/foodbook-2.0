@@ -270,7 +270,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class='card-labels'>
-                                                                    <a class='lbl lunch'>".$recipe["recipe_category"]."</a>
+                                                                    <a class='lbl category-base'>".$recipe["recipe_category"]."</a>
                                                                     <a class='lbl ".strtolower($recipe["recipe_level"])."' href='#'>".$recipe["recipe_level"]."</a>
                                                                 </div>
                                                             </div>
@@ -322,7 +322,7 @@
                                 <div>
                                     <div id="ingredients">
                                     </div>
-                                    <button class="btn-base btn-green-admin" type="button" id="add-ingredient">Add
+                                    <button class="btn-base btn-green" type="button" id="add-ingredient">Add
                                         ingredient</button>
                                 </div>
 
@@ -469,7 +469,7 @@
                                                             </div>
                                                         </div>
                                                         <div class='card-labels'>
-                                                            <a class='lbl lunch' href='#'>".$recipe["recipe_category"]."</a>
+                                                            <a class='lbl category-base' href='#'>".$recipe["recipe_category"]."</a>
                                                             <a class='lbl ".strtolower($recipe["recipe_level"])."' href='#'>".$recipe["recipe_level"]."</a>
                                                         </div>
                                                     </div>

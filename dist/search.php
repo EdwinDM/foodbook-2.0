@@ -188,7 +188,7 @@
                                                     </div>
                                                 </div>
                                                 <div class='card-labels'>
-                                                    <a class='lbl lunch' href='#'>".$recipe["recipe_category"]."</a>
+                                                    <a class='lbl category-base' href='#'>".$recipe["recipe_category"]."</a>
                                                     <a class='lbl ".strtolower($recipe["recipe_level"])."' href='#'>".$recipe["recipe_level"]."</a>
                                                 </div>
                                             </div>

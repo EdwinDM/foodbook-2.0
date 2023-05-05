@@ -217,9 +217,9 @@
                                         </div>
                                     </div>
                                     <div class="details-labels">
-                                        <a class="lbl lunch" href="#"><?php echo $recipe[0]["recipe_category"];?></a>
-                                        <a class='lbl lunch' href='#'><?php echo $recipe[0]["recipe_occasion"];?></a>
-                                        <a class='lbl lunch' href='#'><?php echo $recipe[0]["recipe_yields"];?>
+                                        <a class="lbl category-base" href="#"><?php echo $recipe[0]["recipe_category"];?></a>
+                                        <a class='lbl category-base' href='#'><?php echo $recipe[0]["recipe_occasion"];?></a>
+                                        <a class='lbl category-base' href='#'><?php echo $recipe[0]["recipe_yields"];?>
                                             Porciones</a>
                                         <a class="lbl <?php echo strtolower($recipe[0]["recipe_level"]);?>"
                                             href="#"><?php echo $recipe[0]["recipe_level"];?></a>
@@ -313,7 +313,7 @@
                                                     </div>
                                                 </div>
                                                 <div class='card-labels'>
-                                                    <a class='lbl lunch' href='#'>".$recipe["recipe_category"]."</a>
+                                                    <a class='lbl category-base' href='#'>".$recipe["recipe_category"]."</a>
                                                     <a class='lbl ".strtolower($recipe["recipe_level"])."' href='#'>".$recipe["recipe_level"]."</a>
                                                 </div>
                                             </div>

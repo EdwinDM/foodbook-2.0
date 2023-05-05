@@ -25,6 +25,7 @@
 .title-sm3{
     @include mixins.set-fonts(vars.$ff, vars.$fw-bold, vars.$fs-rg1);
 }
+
 .title-md0{
     @include mixins.set-fonts(vars.$ff, vars.$fw-semibold, vars.$fs-md1);
 }
@@ -43,7 +44,6 @@
 
 .title-mdxl1{
     @include mixins.set-fonts(vars.$ff, vars.$fw-semibold, vars.$fs-lg);
-    color: aqua
 }
 
 .title-mdxl2{
@@ -80,8 +80,6 @@
     @include mixins.set-fonts(vars.$ff, vars.$fw-reg, vars.$fs-rg1, vars.$clr-negro-001);
     text-decoration: none;
 }
-
-
 
 .subtitle {
     font-size: 1rem;

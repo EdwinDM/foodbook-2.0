@@ -316,7 +316,7 @@
                                                     </div>
                                                 </div>
                                                 <div class='card-labels'>
-                                                    <a class='lbl lunch' href='#'>".$recipe["recipe_category"]."</a>
+                                                    <a class='lbl category-base' href='#'>".$recipe["recipe_category"]."</a>
                                                     <a class='lbl ".strtolower($recipe["recipe_level"])."' href='#'>".$recipe["recipe_level"]."</a>
                                                 </div>
                                             </div>
@@ -350,7 +350,7 @@
                                             <p class='poster-description mt-3'>".utf8_decode($recipe["recipe_description"])."</p>
                                             <p class='poster-time justify-content-start'>Tiempo total ".$recipe["recipe_time"]."</p>
                                             <div class='poster-labels'>
-                                                <a class='lbl lunch' href='#'>".$recipe["recipe_category"]."</a>
+                                                <a class='lbl category-base' href='#'>".$recipe["recipe_category"]."</a>
                                                 <a class='lbl ".strtolower($recipe["recipe_level"])."' href='#'>".$recipe["recipe_level"]."</a>
                                             </div>
                                             <a href='details.php?id_recipe=".$recipe["id_recipe"]."' class='btn-green-xl mt-5'>Ver receta</a>
@@ -397,7 +397,7 @@
                                                     </div>
                                                 </div>
                                                 <div class='card-labels'>
-                                                    <a class='lbl lunch' href='#'>".$recipe["recipe_category"]."</a>
+                                                    <a class='lbl category-base' href='#'>".$recipe["recipe_category"]."</a>
                                                     <a class='lbl ".strtolower($recipe["recipe_level"])."' href='#'>".$recipe["recipe_level"]."</a>
                                                 </div>
                                             </div>

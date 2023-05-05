@@ -1,0 +1,12 @@
+@use '../abstracts/vars';
+@use '../base/typography';
+@use '../abstracts/mixins.scss';
+@use '../abstracts/media-queries';
+
+.nav-ten {
+    @include mixins.nav-ten(vars.$clr-white);
+}
+
+.nav-ten2 {
+    @include mixins.nav-ten(vars.$clr-white);
+}

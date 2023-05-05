@@ -15,7 +15,7 @@
 }
 
 @mixin details-bg-dark-base {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../../imgs/bg-base.svg) no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../imgs/bg-base.svg) no-repeat;
     width: 100vw;
     overflow-x: hidden;
 }
@@ -263,6 +263,10 @@
 @mixin user-icon($fsize){
     font-size: $fsize;
     display: flex!important;
+
+    &:hover {
+        color: vars.$clr-white;
+    }
 }
 
 @mixin edit-recipe($fsize, $color){
@@ -544,8 +548,8 @@
 }
 /* Input Data Recipe */
 
-@mixin nav-ten($color) {
-    background: $color;
+@mixin nav-ten($bgcolor) {
+    background: $bgcolor;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -553,131 +557,212 @@
     padding: 100px 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width: 300px) and (max-width: 540px) {
-
-    .poster-bg {
-        width: 100vw;
-        height: 115vh;
-        border-radius: 30px;
-        position: relative;
-        justify-content: center;
-    }
-
-    .img-poster {
-        width: 100vw;
-        height: 65vh;
-        object-fit: contain;
-        display: flex;
-    }
-
-    .poster-data {
-        bottom: 0px;
-        width: 100vw;
-        height: 66vh;
-        background: linear-gradient(rgba(252, 252, 252, 0.7), rgba(219, 217, 217, 0.8));
-        align-items: center;
-        justify-content: center;
-        display: grid;
-        position: absolute
-    }
-
-    .poster-text {
-        scale: .7;
-    }
+@mixin nav-ten-search($bgcolor) {
+    background: $bgcolor;
+    width: 100vw;
+    height: 68vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 220px 0px 145px 0;
 }
 
-@media  (min-width: 541px) and (max-width: 800px) {
+@mixin nav-poster {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    .recipe-card {
-        scale: 1.2;
-        
-    }
+@mixin poster($w, $h, $bg, $pos) {
+    width: $w;
+    height: $h;
+    background: $bg;
+    position: $pos;
+}
 
-    .img-poster {
-        width: 140vw;
-        height: 65vh;
-        object-fit: contain;
-        display: flex;
-    }
+@mixin img-poster {
+    width: 1320px;
+    height: 64vh;
+    display: flex;
+    object-fit: cover;
+    border-radius: 1.875rem;
+}
 
-    .poster-data {
-        bottom: 0px;
-        width: 100vw;
-        height: 52vh;
-        background: linear-gradient(rgba(252, 252, 252, 0.7), rgba(219, 217, 217, 0.8));
-    
-        align-items: center;
-        justify-content: center;
-        display: grid;
-    
-        position: absolute
-    }
+@mixin poster-image($w, $h) {
+    width: $w;
+    height: $h;
+    object-fit: cover;
+    position: absolute;
+}
 
+@mixin poster-bg {
+    width: 1320px;
+    height: 64vh;
+    border-radius: 30px;
+    position: relative;
+    justify-content: center;
+}
 
-    .poster-bg {
-        width: 100vw;
-        height: 115vh;
-        border-radius: 30px;
-        position: relative;
-        justify-content: center;
-    }
+@mixin poster-data {
+    bottom: 0px;
+    width: 660px;
+    height: 64vh;
+    background: linear-gradient(rgba(252, 252, 252, 0.7), rgba(219, 217, 217, 0.8));
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    position: absolute;
+    border-radius: 30px 0 0 30px;
+}
 
+@mixin poster-info {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    padding: 0px 15px 0 15px;
+    position: relative;
 
 }
 
-@media  (min-width: 820px) and (max-width: 1200px) {
+@mixin poster-title {
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: rgb(0, 0, 0);
 
-    .img-poster {
-        width: 140vw;
-        height: 65vh;
-        object-fit: contain;
-        display: flex;
+}
+
+@mixin poster-description {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--clr-negro-001);
+    margin-top: 5px;
+}
+
+@mixin poster-text {
+    height: 300px;
+    margin-top: 5rem;
+}
+
+@mixin poster-animation-bg {
+    width: 1521px;
+    height: 590px;
+    z-index: 1;
+
+}
+
+@mixin poster-labels {
+    right: 11px;
+    padding: 0 0 10px 15px;
+    z-index: 1;
+    margin-top: 3rem;
+    position: relative;
+    scale: 2.5;
+    justify-content: space-between !important;
+}
+
+@mixin poster-time {
+    color: var(--clr-negro-001);
+    font-size: 24px;
+    font-weight: 400;
+    justify-content: start !important;
+
+}
+
+@mixin recipe-poster-data {
+    color: var(--clr-negro-001);
+}
+
+@mixin container-ld{
+    width: 1320px;
+    height: 100%;
+}
+
+@mixin nav-link {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--clr-white);
     }
 
-    .poster-data {
-        bottom: 0px;
-        width: 100vw;
-        height: 50vh;
-        background: linear-gradient(rgba(252, 252, 252, 0.7), rgba(219, 217, 217, 0.8));
-    
-        align-items: center;
-        justify-content: center;
-        display: grid;
-    
-        position: absolute
+    &:after {
+        content: "";
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: var(--clr-verde-001);
+    transition: left .8s;
     }
 
-
-    .poster-bg {
-        width: 100vw;
-        height: 115vh;
-        border-radius: 30px;
-        position: relative;
-        justify-content: center;
+    &:hover:after {
+        left: 0;
     }
 }
+
+
+/* ----------------------------HEADER--------------------------------------- */
+
+
+/* TOP NAVIGATION */
+
+@mixin header-base {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+
+@mixin topnav {
+    background: var(--clr-mostaza-001);
+}
+
+@mixin search-input {
+    width: 16rem;
+    height: 2.5rem;
+    padding-left: 30px;
+    text-align: center;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    outline: none
+}
+
+@mixin header-options {
+    font-weight: var(--fw-bold) !important;
+    font-size: 10px;
+}
+
+@mixin header-logo {
+    width: 6rem;
+}
+
+@mixin container-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin responsive-header {
+    display: none;
+    scale: 1!important;
+}
+
+@mixin profile($w, $br) {
+    width: $w;
+    border-radius: $br;
+}
+
+@mixin profile-text($fw, $fs, $color) {
+    font-weight: $fw;
+    font-size: $fs;
+    color: $color;
+
+}
+/* TOP NAVIGATION */

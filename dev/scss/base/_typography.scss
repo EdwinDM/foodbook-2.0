@@ -55,7 +55,7 @@
 }
 
 .title-lg{
-    @include mixins.set-fonts(vars.$ff, vars.$fw-bold, vars.$fs-lg2);
+    @include mixins.set-fonts(vars.$ff, vars.$fw-bold, vars.$fs-lg2, vars.$clr-white);
 }
 
 .title-xlg{

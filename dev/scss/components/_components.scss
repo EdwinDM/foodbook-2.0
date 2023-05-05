@@ -15,15 +15,22 @@
 
 /* Forms */
     .bg-base {
-        @include mixins.bg-base("../../imgs/bg-base.svg");
+        @include mixins.bg-base("../imgs/bg-base.svg");
     }
 
     .bg-dark-base {
-        @include mixins.bg-base("../../imgs/bg-base.svg");
+        @include mixins.bg-base("../imgs/bg-base.svg");
     }
 
     .details-bg-dark-base {
         @include mixins.details-bg-dark-base;
+    }
+
+    .bg-index {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../imgs/fondo.svg) no-repeat;
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
     }
 /* Forms */
 
@@ -142,10 +149,6 @@
         margin-left: 5px;
         @include mixins.revision-buttons(vars.$clr-rojo-001);
     }
-
-    /*.search-button {
-        @include mixins.search-button(vars.$clr-negro-001, vars.$clr-verde-002);
-    }*/
 
     .edit {
         @include mixins.delete(vars.$fs-md1, vars.$clr-white, vars.$clr-verde-002);
@@ -328,5 +331,109 @@
 
 .input-2xl {
     @include mixins.input-w-h(650px, 160px);
+}
+
+@media (min-width: 300px) and (max-width: 540px) {
+
+    .poster-bg {
+        width: 100vw;
+        height: 115vh;
+        border-radius: 30px;
+        position: relative;
+        justify-content: center;
+    }
+
+    .img-poster {
+        width: 100vw;
+        height: 65vh;
+        object-fit: contain;
+        display: flex;
+    }
+
+    .poster-data {
+        bottom: 0px;
+        width: 100vw;
+        height: 66vh;
+        background: linear-gradient(rgba(252, 252, 252, 0.7), rgba(219, 217, 217, 0.8));
+        align-items: center;
+        justify-content: center;
+        display: grid;
+        position: absolute
+    }
+
+    .poster-text {
+        scale: .7;
+    }
+}
+
+@media  (min-width: 541px) and (max-width: 800px) {
+
+    .recipe-card {
+        scale: 1.2;
+        
+    }
+
+    .img-poster {
+        width: 140vw;
+        height: 65vh;
+        object-fit: contain;
+        display: flex;
+    }
+
+    .poster-data {
+        bottom: 0px;
+        width: 100vw;
+        height: 52vh;
+        background: linear-gradient(rgba(252, 252, 252, 0.7), rgba(219, 217, 217, 0.8));
+    
+        align-items: center;
+        justify-content: center;
+        display: grid;
+    
+        position: absolute
+    }
+
+
+    .poster-bg {
+        width: 100vw;
+        height: 115vh;
+        border-radius: 30px;
+        position: relative;
+        justify-content: center;
+    }
+
+
+}
+
+@media  (min-width: 820px) and (max-width: 1200px) {
+
+    .img-poster {
+        width: 140vw;
+        height: 65vh;
+        object-fit: contain;
+        display: flex;
+    }
+
+    .poster-data {
+        bottom: 0px;
+        width: 100vw;
+        height: 50vh;
+        background: linear-gradient(rgba(252, 252, 252, 0.7), rgba(219, 217, 217, 0.8));
+    
+        align-items: center;
+        justify-content: center;
+        display: grid;
+    
+        position: absolute
+    }
+
+
+    .poster-bg {
+        width: 100vw;
+        height: 115vh;
+        border-radius: 30px;
+        position: relative;
+        justify-content: center;
+    }
 }
 

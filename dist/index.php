@@ -188,89 +188,101 @@
 
 <body>
     <section class="bg-index">
-        <header class="header-base">
+    <header class="header-base">
 
-            <!-- mobile bar menu -->
+<!-- mobile bar menu -->
 
-            <div class="position-absolute  top-0 start-0 pt-3 pb-3 ps-3 mobile-bar  ">
-                <div class="row ">
-                    <div class="col d-flex justify-content-start ps-4">
-                        <img class="mobile-icon" src="./imgs/bars.svg" alt="menu bar">
-                    </div>
+<div class="position-absolute  top-0 start-0 pt-3 pb-3 ps-3 mobile-bar  ">
+    <div class="row ">
+        <div class="col d-flex justify-content-start ps-4">
+            <img class="mobile-icon" src="./imgs/bars.svg" alt="menu bar">
+        </div>
 
-                    <div class="col d-flex justify-content-center">
-                        <img class="mobile-logo " src="./imgs/Logo.png" alt="menu bar">
-                    </div>
+        <div class="col d-flex justify-content-center">
+            <img class="mobile-logo " src="./imgs/Logo.png" alt="menu bar">
+        </div>
+    </div>
+</div>
+
+<!-- mobile bar menu -->
+
+
+<!-- nav menu -->
+<nav id="navbar-main" class="mobile-offcanvas navbar  navbar-expand-lg topnav">
+    <div class="offcanvas-header">
+        <button id="btn-close" class="btn btn-light float-end me-3">X</button>
+    </div>
+    <div class="container container-nav center gap-3 ">
+        <a class="navbar-brand d-flex align-items-center me-5" href="#">
+            <img src="./imgs/Logo.png" class="header-logo" alt="Logo">
+        </a>
+        <div class=" container container-nav" id="navbarSupportedContent">
+            <ul class="navbar-nav gap-5  ">
+                <li class="nav-item  position-relative dropdown"><a class="nav-link b title-md0"
+                        aria-current="page" href="#">Principal</a></li>
+                <li class="dropdown nav-item ">
+                    <a class="nav-link title-md0" data-bs-toggle="dropdown" aria-expanded="false"
+                        href="#">Categoría </a>
+                    <a href=" "></a>
+                    <ul class="dropdown-menu text-center">
+                        <?php 
+                                foreach ($categories as $category){
+                                    echo "<li><a class='dropdown-item' href='index.php?category=".$category['id_recipe_category']."&name=".$category['recipe_category']."#recetas'>".$category['recipe_category']."</a></li>";
+                                }
+                            ?>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class=" nav-link  title-md0 " data-bs-toggle="dropdown" aria-expanded="false"
+                        href="#">Dificultad</a>
+                    <ul class="dropdown-menu text-center">
+                        <?php
+                                foreach ($levels as $level){
+                                    echo "<li><a class='dropdown-item' href='index.php?level=".$level['id_recipe_level']."&name=".$level['recipe_level']."#recetas'>".$level['recipe_level']."</a></li>";
+                                }
+                            ?>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class=" nav-link  title-md0  " data-bs-toggle="dropdown" aria-expanded="false"
+                        href="#">Ocasiones</a>
+                    <ul class="dropdown-menu text-center">
+                        <?php 
+                                foreach ($occasions as $occasion){
+                                    echo "<li><a class='dropdown-item' href='index.php?occasion=".$occasion['id_recipe_occasion']."&name=".$occasion['recipe_occasion']."#recetas'>".$occasion['recipe_occasion']."</a></li>";
+                                }
+                            ?>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <form class="d-flex align-items-center search-form" action="search.php" method="get" role="search">
+            <input class="search-input" type="search" name="keyword" placeholder="¿Qué quieres cocinar hoy?"
+                aria-label="Search">
+            <button class="search-button" type="submit"></button>
+        </form>
+        <div class="col">
+            <div class="container container-nav  ">
+                <div class="dropdown">
+                    <i class=""></i>
+                    <i class="fa-regular fa-circle-user profile-index hidden-form user-icon" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false"></i>
+                    <ul class="dropdown-menu text-center p-4">
+                        <li><a class="title-sm2 profile-text"><?php echo $_SESSION["user"]?></a></li>
+                        <li><a class="dropdown-item pt-3" href="logout.php">Cerrar sesión</a></li>
+                    </ul>
                 </div>
             </div>
+        </div>
+    </div>
+</nav>
 
-            <!-- mobile bar menu -->
+<!-- nav menu -->
 
-
-            <!-- nav menu -->
-            <nav id="navbar-main" class="mobile-offcanvas navbar  navbar-expand-lg topnav">
-                <div class="offcanvas-header">
-                    <button id="btn-close" class="btn btn-light float-end me-3">X</button>
-                </div>
-                <div class="container container-nav center gap-3 ">
-                    <a class="navbar-brand d-flex align-items-center me-5" href="#">
-                        <img src="./imgs/Logo.png" class="header-logo" alt="Logo">
-                    </a>
-                    <div class=" container container-nav" id="navbarSupportedContent">
-                        <ul class="navbar-nav gap-5  ">
-                            <li class="nav-item  position-relative dropdown"><a class="nav-link b title-md0"
-                                    aria-current="page" href="#">Principal</a></li>
-                            <li class="dropdown nav-item ">
-                                <a class="nav-link title-md0" data-bs-toggle="dropdown" aria-expanded="false"
-                                    href="#">Categoría </a>
-                                <a href=" "></a>
-                                <ul class="dropdown-menu text-center">
-                                    <?php 
-                                    foreach ($categories as $category){
-                                        echo "<li><a class='dropdown-item' href='index.php?category=".$category['id_recipe_category']."&name=".$category['recipe_category']."#recetas'>".$category['recipe_category']."</a></li>";
-                                    }
-                                ?>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class=" nav-link  title-md0 " data-bs-toggle="dropdown" aria-expanded="false"
-                                    href="#">Dificultad</a>
-                                <ul class="dropdown-menu text-center">
-                                    <?php
-                                    foreach ($levels as $level){
-                                        echo "<li><a class='dropdown-item' href='index.php?level=".$level['id_recipe_level']."&name=".$level['recipe_level']."#recetas'>".$level['recipe_level']."</a></li>";
-                                    }
-                                ?>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class=" nav-link  title-md0  " data-bs-toggle="dropdown" aria-expanded="false"
-                                    href="#">Ocasiones</a>
-                                <ul class="dropdown-menu text-center">
-                                    <?php 
-                                    foreach ($occasions as $occasion){
-                                        echo "<li><a class='dropdown-item' href='index.php?occasion=".$occasion['id_recipe_occasion']."&name=".$occasion['recipe_occasion']."#recetas'>".$occasion['recipe_occasion']."</a></li>";
-                                    }
-                                ?>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <form class="d-flex align-items-center search-form" action="search.php" method="get" role="search">
-                        <input class="search-input" type="search" name="keyword" placeholder="¿Qué quieres cocinar hoy?"
-                            aria-label="Search">
-                        <button class="search-button" type="submit"></button>
-                    </form>btn
-                </div>
-            </nav>
-
-            <!-- nav menu -->
-
-        </header>
-
+</header>
         <!-- Poster -->
 
-        <section class="nav-poster ">
+        <section class="nav-poster">
 
             <div class="mb-5 text-center">
                 <div class="wrapper d-flex justify-content-center mt-5">
@@ -336,7 +348,7 @@
 
         <!-- 2Poster -->
 
-        <section class="nav-poster2">
+        <section class="nav-poster">
             <div class="text-center">
                 <h2 class="title-lg mb-5">¡Lo más nuevo!</h2>
                 <?php

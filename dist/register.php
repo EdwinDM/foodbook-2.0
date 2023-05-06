@@ -114,7 +114,7 @@
     <form class="bg-base d-flex" action="add-admin.php" method="post" enctype="multipart/form-data">
         <div class="container-base d-flex justify-content-center align-items-center">
             <div class="register-data">
-                <h2 class="text-center title-mdxl3 text-black mtl mv-title mt-mv2">Registrar Admin</h2>
+                <h2 class="text-center title-mdxl3 text-black mtl mv-title mt-mv2">Registrarse</h2>
                 <div class="d-flex justify-content-center mt-4">
                     <input type="text" class="text-input text-center d-flex" placeholder="Nombre de Usuario"
                         name="user" />
@@ -123,7 +123,7 @@
                     <input type="password" class="text-input text-center d-flex" placeholder="Contraseña" name="pass" />
                 </div>
                 <div class="d-flex justify-content-center mt-m mobile-version mt-mv1">
-                    <input class="btn-base btn-green-admin" type="submit" value="Registrar">
+                    <input class="btn-base btn-green" type="submit" value="Registrarse">
                 </div>
                 <h3 class="forms-link text-center mt-5 forms-link-mv mt-mv3">¿Ya existe el usuario?</h3>
                 <div class="d-flex justify-content-center mt-1 mobile-version forms-link-mv">

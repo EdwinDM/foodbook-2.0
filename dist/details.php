@@ -275,7 +275,6 @@
             <div class="w-100">
                 <div class="d-flex justify-content-between align-items-end title-subidos-container">
                     <h2 class="title-options ms-4">Recetas relacionadas</h2>
-                    <h3 class="ver-mas me-4">Ver más</h3>
                 </div>
                 <div class="row row-1">
                     <?php

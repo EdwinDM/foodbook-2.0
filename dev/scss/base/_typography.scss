@@ -31,7 +31,7 @@
 }
 
 .title-md1{
-    @include mixins.set-fonts(vars.$ff, vars.$fw-semibold, vars.$fs-md1);
+    @include mixins.set-fonts(vars.$ff, vars.$fw-semibold, vars.$fs-md1, vars.$clr-white);
 }
 
 .title-md2{
@@ -43,7 +43,7 @@
 }
 
 .title-mdxl1{
-    @include mixins.set-fonts(vars.$ff, vars.$fw-semibold, vars.$fs-lg);
+    @include mixins.set-fonts(vars.$ff, vars.$fw-semibold, vars.$fs-lg, vars.$clr-white);
 }
 
 .title-mdxl2{
@@ -63,7 +63,7 @@
 }
 
 .title-xlgsb{
-    @include mixins.set-fonts(vars.$ff, vars.$fw-light, vars.$fs-xlg1);
+    @include mixins.set-fonts(vars.$ff, vars.$fw-light, vars.$fs-xlg2, vars.$clr-mostaza-001);
 }
 
 .title-white {

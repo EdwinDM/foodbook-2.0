@@ -1,0 +1,240 @@
+@use '../abstracts/vars';
+@use '../base/typography';
+@use '../abstracts/mixins.scss';
+@use '../abstracts/media-queries';
+
+.user {
+    @include mixins.user;
+}
+
+.admin {
+    @include mixins.admin;
+}
+
+.upload-icon {
+    @include mixins.upload-icon;
+}
+
+.admin-options {
+    width: 35vw;
+}
+
+.nav-options {
+    @include mixins.nav-options;
+}
+
+.nav-options-admin {
+    @include mixins.nav-options-admin;
+}
+
+.nav-link {
+    color: var(--clr-negro-001);
+}
+
+.space-line {
+    @include mixins.space-line;
+}
+
+.poster_scalë{
+    scale: 3.9;
+}
+
+.hiden-element {
+    display: none!important;
+}
+
+.options {
+    @include mixins.options;
+}
+
+.subir-items {
+    @include mixins.subir-items;
+}
+
+.subidos-items {
+    @include mixins.subidos-items;
+}
+
+.revision-items {
+    @include mixins.revision-items;
+}
+
+.usuarios-items {
+    @include mixins.usuarios-items;
+}
+
+.data-form {
+    margin-top: -67px;
+}
+
+.card {
+    width: 97%;
+}
+
+.col-user {
+    margin: 100px;
+}
+
+.container-base {
+    @include mixins.container-base;
+}
+
+.info-base {
+    @include mixins.info-base;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media  (min-width: 300px) and (max-width: 540px) {
+    .row-mv {
+        height: 100vh;
+        align-items: center;
+    }
+
+    .img-container-mv {
+        justify-content: center!important;
+        margin: 0!important;
+    }
+
+    .img-base {
+        margin-top: 5rem;
+        height: 35vh!important;
+    }
+
+    .profile-image {
+        width: 15.625rem;
+    }
+
+    .profile-info {
+        justify-content: center!important;
+        margin: 0!important;
+    }
+
+    .info-base {
+        margin-top: -10.625rem;
+        text-align: center;
+    }
+
+    .uploads {
+        justify-content: center;
+        margin: 30px 0 0 0!important;
+    }
+
+    .user {
+        font-size: 3rem;
+    }
+    
+    .name {
+        font-size: .9rem;
+        margin-top: -15px;
+        line-height: 25px;
+    }
+
+    .upload-icon {
+        width: 15px;
+    }
+
+    .nav-options {
+        height: fit-content!important;
+    }
+
+    .small-nav-options {
+        height: 163vh;
+    }
+
+    .admin-options {
+        width: 100vw;
+    }
+
+    .options {
+        font-size: .65rem;
+    }
+
+    .title-subidos-container {
+        justify-content: center!important;
+    }
+
+    .title-subidos {
+        font-size: 27px;
+        margin: 0!important;
+        justify-content: center!important;
+    }
+
+    .data-form {
+        margin-top: 75px;
+    }
+
+    .subir-title {
+        margin-top: 24px!important;
+        margin-bottom: -25px!important;
+    }
+
+    .ver-mas {
+        display: none;
+    }
+
+    .recipe-card {
+        scale: 1.2;
+        margin-top: 40px;
+    }
+
+    .recipe-card:hover {
+        scale: 1.21;
+    }
+
+    .revision-card {
+        zoom: 1.3;
+        margin: 70px 0 30px 0;
+    }
+
+    
+
+    .ms-4 {
+        margin-left: 0!important;
+    }
+
+    .mv-col {
+        zoom: .7;
+        margin-bottom: 15px;
+    }
+
+    .e-mt {
+        margin-top: -12px!important;
+    }
+
+    .input-data-recipe {
+        font-size: 14px;
+    }
+
+    .input-s {
+        width: 123px;
+    }
+    
+    .input-l {
+        width: 184px;
+    }
+
+    .col-5 {
+        max-width: none;
+        width: 425px;
+    }
+
+    .btn-green-admin {
+        font-size: .9375rem;
+    }
+}

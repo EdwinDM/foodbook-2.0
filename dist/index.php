@@ -423,74 +423,77 @@
             </div>
         </section>
 
-        <footer class=" downnav  ">
-            <section class="container d-flex mobile-footer  gap-5 ">
-                <div class="col-md  ">
-                    <a class="navbar-brand d-flex just mt-3 footer-img " href="#">
-                        <img src="./imgs/Logo.png" class="footer-image " alt="Logo" class="">
-                    </a>
-                </div>
-                <div class="col-md mt-3 footer-img  ">
-                    <div class="row   site ">
-                        <div class="col ">
-                            <ul class=" mobile-footer">
-                                <li class="mb-3 footer-item">
-                                    <h2 class="footer-link title-md1 container-nav" href="#">CONTACTO</h2>
-                                </li>
-                                <li class="mb-3 footer-item"><a class="footer-link " href="#">+506 2447
-                                        5635</a></li>
-                                <li class="mb-3 footer-item"><a class="footer-link  "
-                                        href="#">foodbook@example.co.cr</a>
-                                </li>
-                                <li class="mb-3 footer-item"><a class="footer-link  " href="#">San Jose,
-                                        Costa Rica. Av 11</a></li>
-                            </ul>
-                        </div>
-                        <div class="col ">
-                            <ul class="mobile-footer p-0">
-                                <li class="mb-3 footer-item">
-                                    <h2 class="footer-link title-md1 container-nav" href="#">MAPA DEL SITIO</h2>
-                                </li>
-                                <li class="mb-3 footer-item"><a class="footer-link " href="#">CATEGORIA</a>
-                                </li>
-                                <li class="mb-3 footer-item"><a class="footer-link  " href="#">DIFICULTAD</a>
-                                </li>
-                                <li class="mb-3 footer-item"><a class="footer-link  " href="#">OCASIONES</a>
-                                </li>
-                            </ul>
+        <footer class="downnav d-flex align-items-center">
+            <section>
+                <section class="container d-flex mobile-footer  gap-5 ">
+                    <div class="col-md  ">
+                        <a class="navbar-brand d-flex just mt-3 footer-img " href="#">
+                            <img src="./imgs/Logo.png" class="footer-image " alt="Logo" class="">
+                        </a>
+                    </div>
+                    <div class="col-md mt-3 footer-img  ">
+                        <div class="row   site ">
+                            <div class="col ">
+                                <ul class=" mobile-footer">
+                                    <li class="mb-3 footer-item">
+                                        <h2 class="footer-link title-md1 container-nav" href="#">CONTACTO</h2>
+                                    </li>
+                                    <li class="mb-3 footer-item"><a class="footer-link " href="#">+506 2447
+                                            5635</a></li>
+                                    <li class="mb-3 footer-item"><a class="footer-link  "
+                                            href="#">foodbook@example.co.cr</a>
+                                    </li>
+                                    <li class="mb-3 footer-item"><a class="footer-link  " href="#">San Jose,
+                                            Costa Rica. Av 11</a></li>
+                                </ul>
+                            </div>
+                            <div class="col ">
+                                <ul class="mobile-footer p-0">
+                                    <li class="mb-3 footer-item">
+                                        <h2 class="footer-link title-md1 container-nav" href="#">MAPA DEL SITIO</h2>
+                                    </li>
+                                    <li class="mb-3 footer-item"><a class="footer-link " href="#">CATEGORIA</a>
+                                    </li>
+                                    <li class="mb-3 footer-item"><a class="footer-link  " href="#">DIFICULTAD</a>
+                                    </li>
+                                    <li class="mb-3 footer-item"><a class="footer-link  " href="#">OCASIONES</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
+                <section class="container ">
+                    <p class=" border-line mt-3 text-center pe-3"> </p>
+                </section>
+                <section class="container container-creditos creditos ">
+                    <div class="col-md d-flex   justify-content-center">
+                        <p class=" footer-text  mt-4 ">2022 Foodbok. Todos los derechos reservados.
+                        </p>
+                    </div>
+                    <div class="col-md d-flex align-items-center  justify-content-center ">
+                        <ul class="d-flex p-0 mt-4 gap-3">
+                            <li class="d-inline-block"><a href="#"> <img class="footer-media" src="./imgs/tw.png"
+                                        alt="twitter"></a></li>
+                            <li class="d-inline-block"><a href="#"><img class="footer-media" src="./imgs/fb.png"
+                                        alt="twitter"></a></li>
+                            <li class="d-inline-block"><a href="#"> <img class="footer-media" src="./imgs/ig.png"
+                                        alt="twitter"></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md d-flex align-items-center  justify-content-center pr">
+                        <ul class="d-flex p-0 mt-4 gap-5">
+                            <li class="footer-text d-inline-block ">
+                                <p class=" "></p> Terminos de uso.</p>
+                            </li>
+                            <li class="footer-text d-inline-block">
+                                <p class="  "></p> Politicas de privacidad.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
             </section>
-            <section class="container ">
-                <p class=" border-line mt-3 text-center pe-3"> </p>
-            </section>
-            <section class="container container-creditos creditos ">
-                <div class="col-md d-flex   justify-content-center">
-                    <p class=" footer-text  mt-4 ">2022 Foodbok. Todos los derechos reservados.
-                    </p>
-                </div>
-                <div class="col-md d-flex align-items-center  justify-content-center ">
-                    <ul class="d-flex p-0 mt-4 gap-3">
-                        <li class="d-inline-block"><a href="#"> <img class="footer-media" src="./imgs/tw.png"
-                                    alt="twitter"></a></li>
-                        <li class="d-inline-block"><a href="#"><img class="footer-media" src="./imgs/fb.png"
-                                    alt="twitter"></a></li>
-                        <li class="d-inline-block"><a href="#"> <img class="footer-media" src="./imgs/ig.png"
-                                    alt="twitter"></a></li>
-                    </ul>
-                </div>
-                <div class="col-md d-flex align-items-center  justify-content-center pr">
-                    <ul class="d-flex p-0 mt-4 gap-5">
-                        <li class="footer-text d-inline-block ">
-                            <p class=" "></p> Terminos de uso.</p>
-                        </li>
-                        <li class="footer-text d-inline-block">
-                            <p class="  "></p> Politicas de privacidad.</p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            
         </footer>
     </section>
 

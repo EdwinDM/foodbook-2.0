@@ -1,0 +1,174 @@
+@use '../abstracts/vars';
+@use '../base/typography';
+@use '../abstracts/mixins.scss';
+@use '../abstracts/media-queries';
+
+.footer-item{
+    @include mixins.footer-item;
+}
+
+.footer-link{
+    @include mixins.footer-link;
+}
+
+.footer-image {
+    @include mixins.footer-image;
+}
+
+.footer-media {
+    width: 50px; 
+}
+
+.downnav{
+    @include mixins.downnav;
+}
+
+.container-footer{
+    @include mixins.container-footer;
+}
+
+.footer-text{
+    @include mixins.footer-text;
+}
+
+.container-creditos{
+    @include mixins.container-creditos;
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 300px) and (max-width: 540px) {
+    .footer-image {
+        width: 10rem; 
+       justify-content: center;
+    }
+
+    .downnav{
+        display: grid;
+        height: auto;
+        z-index: 1;
+    }
+
+    .mobile-footer{
+        align-items: center!important;
+        display: grid!important; 
+        justify-content: center!important;
+    }
+
+    .footer-text{
+        font-size: 12px;
+    }
+
+    .site{
+        scale: .9;
+    }
+    
+    .creditos{
+        display: block;
+    }
+
+    .footer-img{
+        justify-content: center!important;
+    }
+
+    .container-creditos{   
+        width: auto;
+        font-weight: vars.$fw-med;
+        font-size: vars.$fs-rg1;
+        align-items: center!important;
+        justify-content: space-between!important;
+        
+    }
+}
+
+@media (min-width: 541px) and (max-width: 800px) {
+    .footer-image {
+        width: 16rem; 
+       justify-content: center;
+    }
+
+    .downnav{
+        display: grid;
+        height: auto;
+        z-index: 1;
+    }
+
+    .mobile-footer{
+        align-items: center!important;
+        display: grid!important; 
+        justify-content: center!important;
+        gap: 2rem!important;
+    }
+
+    .footer-text{
+        font-size: 12px;
+    }
+
+    .site{
+        scale: .9;
+    }
+    
+    .creditos{
+        display: block;
+    
+    }
+
+    .footer-img{
+        justify-content: center!important;
+    }
+
+    .container-creditos{
+        width: auto;
+        font-weight: vars.$fw-med;
+        font-size: vars.$fs-rg1;
+        align-items: center!important;
+        justify-content: space-between!important;
+        
+    }
+}
+
+@media (min-width: 820px) and (max-width: 1200px) {
+    .downnav{
+        display: grid;
+        height: auto;
+        z-index: 1;
+    }
+
+    .mobile-footer{
+        align-items: center!important;
+        display: grid!important; 
+        justify-content: center!important;
+    }
+
+    .footer-text{
+        font-size: 12px;
+    }
+
+    .site{
+        scale: .9;
+    }
+    
+    .creditos{
+        display: block;
+    
+    }
+
+    .footer-img{
+        justify-content: center!important;
+    }
+
+    .container-creditos{
+        width: auto;
+        font-weight: vars.$fw-med;
+        font-size: vars.$fs-rg1;
+        align-items: center!important;
+        justify-content: space-between!important;
+    }
+}

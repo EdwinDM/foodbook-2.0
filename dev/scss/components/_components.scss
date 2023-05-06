@@ -109,7 +109,7 @@
     }
 
     .like:hover {
-        color: var(--clr-rojo-001);
+        color: vars.$clr-rojo-001;
     }
 
     .card-options {
@@ -121,15 +121,15 @@
     }
 
     .hearth {
-        @include mixins.hearth(vars.$fs-sm2, vars.$clr-white);
-    }
-
-    .hearth-xl {
         @include mixins.hearth(vars.$fs-md1, vars.$clr-white);
     }
 
+    .hearth-xl {
+        @include mixins.hearth(vars.$fs-md3, vars.$clr-white);
+    }
+
     .like-count {
-        @include mixins.like-count(vars.$fs-sm2);
+        @include mixins.like-count(vars.$fs-rg1);
     }
 
     .like-count-xl {

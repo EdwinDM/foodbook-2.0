@@ -1,0 +1,314 @@
+@use '../abstracts/vars';
+@use '../base/typography';
+@use '../abstracts/mixins.scss';
+@use '../abstracts/media-queries';
+
+.details-container-base {
+    @include mixins.details-container-base;
+}
+
+.border-details {
+    @include mixins.border-details;
+}
+
+.details-text {
+    @include mixins.details-text;
+}
+
+.details-time {
+    @include mixins.details-time;
+}
+
+.text-container {
+    @include mixins.text-container;
+}
+
+.description-text-container {
+    @include mixins.description-text-container;
+}
+
+.details-border {
+    @include mixins.details-border;
+}
+
+.div-100 {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media  (min-width: 300px) and (max-width: 413px) {
+    .details-card {
+        zoom: .5;
+    }
+}
+
+@media  (min-width: 414px) and (max-width: 540px) {
+    .details-card {
+        zoom: .6;
+    }
+}
+
+@media  (min-width: 300px) and (max-width: 540px) {
+    .border-details {
+        display: none;
+        border: none;
+        margin-top: 0;
+    }
+
+    .details-border {
+        padding: 50px 0;
+    }
+
+    .row-1 {
+        margin-top: 1.25rem!important;
+    }
+
+    .data-container {
+        width: 100%!important;
+        margin: 0!important;
+        padding: 0!important;
+    }
+
+    .bg-dark-base {
+        height: 120vh!important;
+    }
+
+    .details-container-base {
+        padding-top: 7rem;
+        padding-bottom: 2rem;
+
+        
+    }
+
+    .details-text {
+        font-size: 15px;
+    }
+
+    .container-base {
+        height: fit-content!important;
+        
+    }
+
+    .text-container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .description {
+        margin-right: 10px;
+    }
+
+    .ingredients {
+        margin-left: 10px;
+    }
+    
+    .col-md {
+        width: 100%;
+    }
+
+    .preparation-text {
+        margin: 0;
+    }
+
+    .bg-dark-base {
+        height: 110vh;
+    }
+
+    .bg-light-base {
+        height: fit-content!important;
+        display: flex;
+    }
+
+    .title-options {
+        text-align: center;
+        margin: 0!important;
+    }
+
+    .details-data-container {
+        width: 100%;
+    }
+}
+
+@media  (min-width: 541px) and (max-width: 800px) {
+    .border-details {
+        display: none;
+        border: none;
+        margin-top: 0;
+    }
+
+    .details-border {
+        padding: 50px 0;
+    }
+
+    .row-1 {
+        margin-top: 1.25rem!important;
+    }
+
+    .data-container {
+        width: 100%!important;
+        margin: 0!important;
+        padding: 0!important;
+        scale: 1.4;
+    }
+
+    .details-card {
+        zoom: .7;
+    }
+
+    .bg-dark-base {
+        height: 120vh!important;
+    }
+
+    .details-container-base {
+        padding-top: 15rem;
+        padding-bottom: 2rem;
+
+        
+    }
+
+    .details-text {
+        font-size: 15px;
+    }
+
+    .container-base {
+        height: fit-content!important;
+        
+    }
+
+    .text-container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .description {
+        margin-right: 10px;
+    }
+
+    .ingredients {
+        margin-left: 10px;
+    }
+    
+    .col-md {
+        width: 100%;
+    }
+
+    .preparation-text {
+        margin: 0;
+    }
+
+    .bg-dark-base {
+        height: 110vh;
+    }
+
+    .bg-light-base {
+        height: fit-content!important;
+        display: flex;
+    }
+
+    .title-options {
+        text-align: center;
+        margin: 0!important
+    }
+
+    .details-data-container {
+        width: 100%;
+        padding-top: 4rem;
+    }
+}
+
+
+@media  (min-width: 820px) and (max-width: 1200px) {
+    .border-details {
+        display: none;
+        border: none;
+        margin-top: 0;
+    }
+
+    .details-border {
+        padding: 50px 0;
+    }
+
+    .row-1 {
+        margin-top: 1.25rem!important;
+    }
+
+    .data-container {
+        width: 100%!important;
+        margin: 0!important;
+        padding: 0!important;
+        scale: 1.4;
+    }
+
+    .details-card {
+        zoom: .7;
+    }
+
+    .bg-dark-base {
+        height: 120vh!important;
+    }
+
+    .details-container-base {
+        padding-top: 17rem;
+        padding-bottom: 2rem;
+
+        
+    }
+
+    .details-text {
+        font-size: 15px;
+    }
+
+    .container-base {
+        height: fit-content!important;
+        
+    }
+
+    .text-container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .description {
+        margin-right: 10px;
+    }
+
+    .ingredients {
+        margin-left: 10px;
+    }
+    
+    .col-md {
+        width: 100%;
+    }
+
+    .preparation-text {
+        margin: 0;
+    }
+
+    .bg-dark-base {
+        height: 110vh;
+    }
+
+    .bg-light-base {
+        height: fit-content!important;
+        display: flex;
+    }
+
+    .title-options {
+        text-align: center;
+        margin: 0!important
+    }
+
+    .details-data-container {
+        width: 100%;
+        padding-top: 4rem;
+    }
+}

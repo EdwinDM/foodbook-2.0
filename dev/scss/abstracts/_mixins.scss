@@ -9,6 +9,7 @@
 /* Forms */
 @mixin bg-base($bgimg) {
     background: url($bgimg) no-repeat;
+    background-size: cover;
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
@@ -16,12 +17,14 @@
 
 @mixin details-bg-dark-base {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../imgs/bg-base.svg) no-repeat;
+    background-size: cover;
     width: 100vw;
     overflow-x: hidden;
 }
 
 @mixin bg-dark-base($bg, $w, $h) {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url($bg) no-repeat;
+    background-size: cover;
     width: $w;
     height: $h;
     overflow-x: hidden;
@@ -29,6 +32,7 @@
 
 @mixin bg-light-base($bg, $w, $h) {
     background: $bg;
+    background-size: cover;
     width: $w;
     height: $h;
     overflow-x: hidden;
@@ -37,6 +41,7 @@
 
 @mixin bg-index($bg, $w, $h) {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url($bg) no-repeat;
+    background-size: cover;
     width: $w;
     height: $h;
     overflow-x: hidden;
@@ -417,14 +422,14 @@
 /* Cards */
 
 @mixin space-line {
-    color: var(--clr-negro-001);
+    color: vars.$clr-negro-001;
     margin-bottom: 0;
     font-weight: 300;
     border-radius: 10px;
 }
 
 @mixin w-space-line {
-    color: var(--clr-white);
+    color: vars.$clr-white;
     font-weight: 100;
     border-radius: 10px;
 }
@@ -498,13 +503,13 @@
 @mixin image-upload-wrap {
     width: 420px;
     height: 420px;
-    border: 3px solid var(--clr-verde-002);
+    border: 3px solid vars.$clr-verde-002;
     border-radius: 30px;
 }
 
 @mixin remove-image {
     font-size: 40px;
-    color: var(--clr-white);
+    color: vars.$clr-white;
     transition: .3s;
     position: absolute;
     top: 30px;
@@ -536,7 +541,7 @@
 
 /* Input Data Recipe */
 @mixin input-data-recipe {
-    border: 3px solid var(--clr-verde-002);
+    border: 3px solid vars.$clr-verde-002;
     border-radius: 30px;
     text-align: center;
     margin: 15px 0 15px 0;
@@ -637,7 +642,7 @@
 @mixin poster-description {
     font-size: 16px;
     font-weight: 400;
-    color: var(--clr-negro-001);
+    color: vars.$clr-negro-001;
     margin-top: 5px;
 }
 
@@ -664,7 +669,7 @@
 }
 
 @mixin poster-time {
-    color: var(--clr-negro-001);
+    color: vars.$clr-negro-001;
     font-size: 24px;
     font-weight: 400;
     justify-content: start !important;
@@ -672,7 +677,7 @@
 }
 
 @mixin recipe-poster-data {
-    color: var(--clr-negro-001);
+    color: vars.$clr-negro-001;
 }
 
 @mixin container-ld{
@@ -689,7 +694,7 @@
     cursor: pointer;
 
     &:hover {
-        color: var(--clr-white);
+        color: vars.$clr-white;
     }
 
     &:after {
@@ -699,7 +704,7 @@
     left: -100%;
     width: 100%;
     height: 2px;
-    background: var(--clr-verde-001);
+    background: vars.$clr-verde-001;
     transition: left .8s;
     }
 
@@ -721,7 +726,7 @@
 }
 
 @mixin topnav {
-    background: var(--clr-mostaza-001);
+    background: vars.$clr-mostaza-001;
 }
 
 @mixin search-input {
@@ -735,7 +740,7 @@
 }
 
 @mixin header-options {
-    font-weight: var(--fw-bold) !important;
+    font-weight: vars.$fw-bold!important;
     font-size: 10px;
 }
 
@@ -766,3 +771,203 @@
 
 }
 /* TOP NAVIGATION */
+
+/* Footer */
+@mixin footer-item{
+    list-style-type: none;
+}
+
+@mixin footer-link{
+    display: block;
+    text-decoration: none;
+    color: vars.$clr-negro-001;
+    transition: .5s;
+}
+
+@mixin footer-image {
+    width: 16rem; 
+   justify-content: center;
+}
+
+@mixin footer-media {
+    width: 50px; 
+}
+
+@mixin downnav{
+    width: 100vw;
+    height: 25rem;
+    font-weight: vars.$fw-reg;
+    font-size: vars.$fs-rg1;
+    background: vars.$clr-mostaza-001;
+    align-items: center!important;
+    justify-content: center;
+    z-index: 1;
+}
+
+@mixin container-footer{
+    width: 100%;
+    height: 25rem;
+    font-weight: vars.$fw-reg;
+    font-size: vars.$fs-rg1;
+    background: vars.$clr-mostaza-001;
+}
+
+@mixin footer-text{
+    color: vars.$clr-negro-001;
+    align-items: center!important;
+    justify-content: center!important;
+    display: flex;
+}
+
+@mixin container-creditos{
+    display: flex;
+    width: 1320px;
+    font-weight: vars.$fw-med;
+    font-size: vars.$fs-rg1;
+    align-items: center!important;
+    justify-content: space-between!important; 
+}
+/* Footer */
+
+/* ---------------------------- Details --------------------------------------- */
+@mixin details-container-base {
+    width: 79vw;
+    height: 100%;
+    margin: auto;
+}
+
+@mixin border-details {
+    height: 70%;
+    border: 2px solid vars.$clr-mostaza-001;
+    border-radius: 50px;
+    margin: 120px 0;
+}
+
+@mixin details-text {
+    margin-top: 1rem;;
+}
+
+@mixin text-container {
+    font-size: 16px;
+}
+
+@mixin description-text-container {
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+@mixin details-border {
+    padding: 50px 230px;
+}
+
+/* ---------------------------- Administrador --------------------------------------- */
+
+@mixin user {
+    color: vars.$clr-mostaza-001;
+    font-size: 6.25rem;
+}
+
+@mixin admin {
+    color: vars.$clr-white;
+    font-weight: 300;
+    font-size: 1.875rem;
+}
+
+@mixin upload-icon {
+    font-size: 1.438rem;
+    color: vars.$clr-mostaza-001;
+    font-size: 2.8125rem;
+}
+
+@mixin nav-options {
+    background: vars.$clr-white;
+    width: 100vw;
+    height: 100vh;
+}
+
+@mixin nav-options-admin {
+    background: vars.$clr-white;
+    width: 100vw;
+    height: 100%;
+}
+
+@mixin space-line {
+    color: vars.$clr-negro-001;
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+@mixin options {
+    font-weight: 500;
+    color: vars.$clr-negro-001;
+    cursor: pointer;
+
+    &:hover {
+        color: vars.$clr-verde-002;
+    }
+}
+
+@mixin subir-items {
+    height: 100%;
+    padding-bottom: 6.25rem;
+}
+
+@mixin subidos-items {
+    height: 100%;
+    padding-bottom: 6.25rem;
+}
+
+@mixin revision-items {
+    height: 100%;
+    padding-bottom: 6.25rem;
+}
+
+@mixin usuarios-items {
+    height: 100%;
+    padding-bottom: 6.25rem;
+}
+
+@mixin container-base {
+    width: 79vw;
+    height: 100vh;
+    margin: auto;
+}
+
+@mixin info-base {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+@mixin login-data {
+    width: 29.375rem;
+    height: 25.625rem;
+    background: vars.$clr-white;
+    border-radius: 30px;
+}
+
+@mixin text-input {
+    box-sizing: border-box;
+    width: 21.875rem;
+    height: 2.5rem;
+    padding: .625rem;
+    border: 2px solid vars.$clr-negro-001;
+    border-radius: 20px;
+}
+
+@mixin text-input {
+    box-sizing: border-box;
+    width: 21.875rem;
+    height: 2.5rem;
+    padding: .625rem;
+    border: 2px solid vars.$clr-negro-001;
+    border-radius: 20px;
+}
+
+@mixin register-data {
+    width: 29.375rem;
+    height: 30rem;
+    background: vars.$clr-white;
+    border-radius: 1.875rem;
+}

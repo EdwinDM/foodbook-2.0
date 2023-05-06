@@ -141,7 +141,7 @@
                     <input type="password" class="text-input text-center d-flex" placeholder="Contraseña" name="pass" />
                 </div>
                 <div class="d-flex justify-content-center mt-m mb-4 mobile-version mt-mv1">
-                    <input class="btn-base btn-green-admin" type="submit" value="Iniciar sesión">
+                    <input class="btn-base btn-green" type="submit" value="Iniciar sesión">
                 </div>
             </div>
         </nav>

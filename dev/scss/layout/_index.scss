@@ -295,9 +295,7 @@ span{
 @media  (min-width: 300px) and (max-width: 540px) {
 
     .wrapper{
-        
-        height: 160px;
-       
+        height: 250px;
     }
 
 
@@ -306,7 +304,14 @@ span{
         scale: .5;
     }
         
-   
+    .poster-mobile {
+        zoom: .4;
+    }
+
+    .subtitle-filter {
+        display: flex;
+        justify-content: center;
+    }
     
 
     .nav-ten {
@@ -339,6 +344,15 @@ span{
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .nav-poster-mobile {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        zoom: .4;
     }
 
     .nav-poster2 {

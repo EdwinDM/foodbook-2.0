@@ -28,95 +28,80 @@
 
 <body>
 
-    <header class="header-base">
-
-        <!-- mobile bar menu -->
-        <div class="position-absolute  top-0 start-0 pt-3 pb-3 ps-3 mobile-bar  ">
-            <div class="row ">
-                <div class="col d-flex justify-content-start ps-4">
-                    <img class="mobile-icon" src="./imgs/bars.svg" alt="menu bar">
+    <header class="header-base bg-color d-flex justify-content-center">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="index.php"><img class="navbar-brand" src="./imgs/logo.png" alt="logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="bars-icon fa-solid fa-bars"></i></button>
                 </div>
-                <div class="col d-flex justify-content-center">
-                    <img class="mobile-logo " src="./imgs/Logo.png" alt="menu bar">
-                </div>
-            </div>
-        </div>
-        <!-- mobile bar menu -->
-
-        <!-- nav menu -->
-        <nav id="navbar-main" class="mobile-offcanvas navbar  navbar-expand-lg topnav">
-            <div class="offcanvas-header">
-                <button id="btn-close" class="btn btn-light float-end me-3">X</button>
-            </div>
-            <div class="container container-nav center gap-3 ">
-                <a class="navbar-brand d-flex align-items-center me-5" href="#">
-                    <img src="./imgs/Logo.png" class="header-logo" alt="Logo">
-                </a>
-                <div class=" container container-nav" id="navbarSupportedContent">
-                    <ul class="navbar-nav gap-5  ">
-                        <li class="nav-item  position-relative dropdown"><a class="nav-link b title-md0"
-                                aria-current="page" href="#">Principal</a></li>
-                        <li class="dropdown nav-item ">
-                            <a class="nav-link title-md0" data-bs-toggle="dropdown" aria-expanded="false"
-                                href="#">Categoría </a>
-                            <a href=" "></a>
-                            <ul class="dropdown-menu text-center">
-                                <li><a class='dropdown-item' href='#'>Todas</a></li>
-                                <li><a class='dropdown-item' href='#'>Desayunos</a></li>
-                                <li><a class='dropdown-item' href='#'>Cenas</a></li>
-                                <li><a class='dropdown-item' href='#'>Bebidas</a></li>
-                                <li><a class='dropdown-item' href='#'>Postres</a></li>
-                                <li><a class='dropdown-item' href='#'>Sopas</a></li>
-                                <li><a class='dropdown-item' href='#'>Entradas</a></li>
+                <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0 ms-auto me-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Categoría</a>
+                            <ul class="dropdown-menu dropdown-options">
+                                <li><a class='dropdown-item' href="#">Todas</a></li>
+                                <li><a class='dropdown-item' href="#">Desayunos</a></li>
+                                <li><a class='dropdown-item' href="#">Bebidas</a></li>
+                                <li><a class='dropdown-item' href="#">Cenas</a></li>
+                                <li><a class='dropdown-item' href="#">Postres</a></li>
+                                <li><a class='dropdown-item' href="#">Sopas</a></li>
+                                <li><a class='dropdown-item' href="#">Entradas</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a class=" nav-link  title-md0 " data-bs-toggle="dropdown" aria-expanded="false"
-                                href="#">Dificultad</a>
-                            <ul class="dropdown-menu text-center">
-                                <li><a class='dropdown-item' href='#'>Todas</a></li>
-                                <li><a class='dropdown-item' href='#'>Fácil</a></li>
-                                <li><a class='dropdown-item' href='#'>Intermedio</a></li>
-                                <li><a class='dropdown-item' href='#'>Avanzado</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Dificultad</a>
+                            <ul class="dropdown-menu dropdown-options">
+                                <li><a class='dropdown-item' href="#">Todas</a></li>
+                                <li><a class='dropdown-item' href="#">Desayunos</a></li>
+                                <li><a class='dropdown-item' href="#">Bebidas</a></li>
+                                <li><a class='dropdown-item' href="#">Cenas</a></li>
+                                <li><a class='dropdown-item' href="#">Postres</a></li>
+                                <li><a class='dropdown-item' href="#">Sopas</a></li>
+                                <li><a class='dropdown-item' href="#">Entradas</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a class=" nav-link  title-md0  " data-bs-toggle="dropdown" aria-expanded="false"
-                                href="#">Ocasiones</a>
-                            <ul class="dropdown-menu text-center">
-                                <li><a class='dropdown-item' href='#'>Todas</a></li>
-                                <li><a class='dropdown-item' href='#'>Día del Padre</a></li>
-                                <li><a class='dropdown-item' href='#'>Día de la Madre</a></li>
-                                <li><a class='dropdown-item' href='#'>Día del Niño</a></li>
-                                <li><a class='dropdown-item' href='#'>Navidad</a></li>
-                                <li><a class='dropdown-item' href='#'>Semana Santa</a></li>
-                                <li><a class='dropdown-item' href='#'>Verano</a></li>
-                                <li><a class='dropdown-item' href='#'>Cumpleaños</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Ocasiones</a>
+                            <ul class="dropdown-menu dropdown-options">
+                                <li><a class='dropdown-item' href="#">Todas</a></li>
+                                <li><a class='dropdown-item' href="#">Desayunos</a></li>
+                                <li><a class='dropdown-item' href="#">Bebidas</a></li>
+                                <li><a class='dropdown-item' href="#">Cenas</a></li>
+                                <li><a class='dropdown-item' href="#">Postres</a></li>
+                                <li><a class='dropdown-item' href="#">Sopas</a></li>
+                                <li><a class='dropdown-item' href="#">Entradas</a></li>
                             </ul>
                         </li>
                     </ul>
-                </div>
-                <form class="d-flex align-items-center search-form">
-                    <input class="search-input" type="search" placeholder="¿Qué quieres cocinar hoy?"
-                        aria-label="Search">
-                    <button class="search-button" type="submit"></button>
-                </form>
-                <div class="col">
-                    <div class="container container-nav  ">
-                        <div class="dropdown">
-                            <i class=""></i>
-                            <i class="fa-regular fa-circle-user profile-index hidden-form user-icon" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"></i>
-                            <ul class="dropdown-menu text-center p-4">
-                                <li><a class="title-sm2 profile-text" href="user.html">Edwin Delgado</a></li>
-                                <li><a class="dropdown-item pt-3" href="#">Cerrar sesión</a></li>
+                    <form class="search-container d-flex justify-content-center align-items-center" action="search.php" method="get" role="search">
+                        <input class="form-control rounded-5 search-bar" type="search" name="keyword" placeholder="¿Qué vas cocinar hoy?" aria-label="Search">
+                        <button class="mt-1" type="submit"><i class="search-button fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                    <li class="nav-item dropdown user-li ms-4">
+                        <div class="">
+                            <img class="nav-link dropdown-toggle user-img" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" src="imgs/profile-image.jpg" alt="Profile image">
+                            <ul class="dropdown-menu user-dropdown mt-2">
+                                <li>
+                                    <h2 class="user-name" href="#">EdwinDM</h2>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="admin.html">Mi perfil</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </li>
                 </div>
             </div>
         </nav>
-        <!-- nav menu -->
     </header>
 
     <!-- Perfil administrador -->

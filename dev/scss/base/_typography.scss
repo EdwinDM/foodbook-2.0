@@ -55,7 +55,7 @@
 }
 
 .title-lg{
-    @include mixins.set-fonts(vars.$ff, vars.$fw-bold, vars.$fs-lg2, vars.$clr-white);
+    @include mixins.set-fonts(vars.$ff, vars.$fw-bold, vars.$fs-lg1, vars.$clr-white);
 }
 
 .title-xlg{
@@ -73,7 +73,6 @@
 
 .title-options {
     @include mixins.set-fonts(vars.$ff, vars.$fw-bold, vars.$fs-lg1, vars.$clr-negro-001);
-    margin-left: 25px;
 }
 
 .forms-link {
@@ -100,6 +99,16 @@
     .title-mdxl1 {
         font-size: 1.2rem;
     }
+
+    .title-options {
+        font-size: 2.5rem;
+        margin-top: 30px;
+    }
+
+    .title-lg {
+        font-size: 2.5rem;
+        margin-top: 6.25rem;
+    }
 }
 
 @media  (min-width: 541px) and (max-width: 800px) {
@@ -109,6 +118,14 @@
 
     .title-mdxl1 {
         font-size: 1.5rem;
+    }
+
+    .title-options {
+        width: 100%;
+    }
+
+    .title-lg {
+        margin-top: 6.25rem;
     }
 }
 
@@ -121,5 +138,13 @@
 
     .title-mdxl1 {
         font-size: 1.5rem;
+    }
+
+    .title-options {
+        margin-top: 2rem;
+    }
+
+    .title-lg {
+        margin-top: 6.25rem;
     }
 }

@@ -19,7 +19,7 @@
     }
 
     .bg-dark-base {
-        @include mixins.bg-base("../imgs/bg-base.svg");
+        @include mixins.bg-dark-base("../imgs/bg-base.svg", 100%, 100%);
     }
 
     .details-bg-dark-base {
@@ -27,7 +27,7 @@
     }
 
     .bg-index {
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../imgs/fondo.svg) no-repeat;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../imgs/bg-base.svg) no-repeat;
         background-size: cover;
         width: 100vw;
         height: 100vh;

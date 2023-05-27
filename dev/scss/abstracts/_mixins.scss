@@ -23,6 +23,7 @@
 }
 
 @mixin bg-dark-base($bg, $w, $h) {
+    overflow-x: hidden;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url($bg) no-repeat;
     background-size: cover;
     width: $w;
@@ -603,7 +604,7 @@
 }
 
 @mixin poster-bg {
-    width: 1320px;
+    width: 70%;
     height: 64vh;
     border-radius: 30px;
     position: relative;
@@ -681,7 +682,7 @@
 }
 
 @mixin container-ld{
-    width: 1320px;
+    width: 70%;
     height: 100%;
 }
 

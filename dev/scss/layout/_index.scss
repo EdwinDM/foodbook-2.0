@@ -19,6 +19,10 @@
     @include mixins.nav-poster;
 }
 
+.nav-poster-2 {
+    @include mixins.nav-poster;
+}
+
 .container-recetario {
     height: 120vh;
 }
@@ -259,6 +263,9 @@ span{
         width: 22.8125rem;
     }
 
+    .container-ld {
+        width: 100%;
+    }
 
     .container-poster {
         zoom: .3;
@@ -270,7 +277,6 @@ span{
         justify-content: center;
     }
     
-
     .nav-ten {
         height: fit-content!important ;
         padding-top: 2rem;
@@ -283,13 +289,9 @@ span{
         padding-top: 2rem;
     }
 
-   
-
     .btn-green {
         font-size: 40px;
     }
-
-    
 
     .btn-green-poster2 {
         margin: 10px 0 0 0!important;
@@ -303,44 +305,50 @@ span{
         justify-content: center;
     }
 
-    .nav-poster2 {
-
+    .nav-poster-2 {
         width: 100vw;
-        height: 135vh;
-        
+        height: 74vh;
+        margin-bottom: 3.125rem;
     }
 
     .container-poste2 {
         height: 100%;
     }
 
-   
+    .poster-bg {
+        width: 100vw;
+        border-radius: 0;
+    }
+
+    .img-poster {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 0;
+    }
+
+    .poster-data {
+        width: 100vw;
+        border-radius: 0;
+    }
 }
 
 @media  (min-width: 541px) and (max-width: 800px) {
 
     .wrapper{
-        
         height: 120px;
-       
     }
 
     .container-wrapper {
         width: 450px;
     }
 
-
     .container-poster {
         zoom: .3;
         scale: .5;
     }
         
-   
-    
-
     .nav-ten {
         height: fit-content!important ;
-    
     }
 
     .nav-ten2 {
@@ -348,13 +356,9 @@ span{
         display: flex;
     }
 
-   
-
     .btn-green {
         font-size: 40px;
     }
-
-    
 
     .btn-green-poster2 {
         margin: 10px 0 0 0!important;
@@ -368,43 +372,46 @@ span{
         justify-content: center;
     }
 
-    .nav-poster2 {
-
+    .nav-poster-2 {
         width: 100vw;
-        height: 135vh;
-        
-        
+        height: 75vh;
     }
 
     .container-poste2 {
         height: 100%;
     }
 
-   
-}
+    .poster-bg {
+        width: 100vw;
+        border-radius: 0;
+    }
 
+    .img-poster {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 0;
+    }
+
+    .poster-data {
+        width: 100vw;
+        border-radius: 0;
+    }
+}
 
 @media  (min-width: 801px) and (max-width: 1200px) {
 
-    .wrapper{
-        
+    .wrapper{ 
         height: 120px;
-       
     }
-
 
     .container-poster {
         zoom: .3;
         scale: .5;
     }
         
-   
-   
-
     .nav-ten {
         height: fit-content!important ;
         margin: auto;
-    
     }
 
     .nav-ten2 {
@@ -413,13 +420,9 @@ span{
         margin: auto;
     }
 
-   
-
     .btn-green {
         font-size: 40px;
     }
-
-    
 
     .btn-green-poster2 {
         margin: 10px 0 0 0!important;
@@ -433,17 +436,28 @@ span{
         justify-content: center;
     }
 
-    .nav-poster2 {
-
+    .nav-poster-2 {
         width: 100vw;
-        height: 135vh;
-        
-        
+        height: 75vh;
     }
 
     .container-poste2 {
         height: 100%;
     }
 
-   
+    .poster-bg {
+        width: 100vw;
+        border-radius: 0;
+    }
+
+    .img-poster {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 0;
+    }
+
+    .poster-data {
+        width: 100vw;
+        border-radius: 0;
+    }
 }

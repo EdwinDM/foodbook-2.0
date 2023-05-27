@@ -27,10 +27,6 @@
     @include mixins.nav-options-admin;
 }
 
-.nav-link {
-    color: var(--clr-negro-001);
-}
-
 .space-line {
     @include mixins.space-line;
 }

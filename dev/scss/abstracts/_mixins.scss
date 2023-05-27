@@ -686,30 +686,11 @@
 }
 
 @mixin nav-link {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-    text-decoration: none;
-    color: #333;
-    cursor: pointer;
+    color: vars.$clr-negro-001;
+    font-size: 20px;
 
     &:hover {
         color: vars.$clr-white;
-    }
-
-    &:after {
-        content: "";
-    position: absolute;
-    bottom: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: vars.$clr-verde-001;
-    transition: left .8s;
-    }
-
-    &:hover:after {
-        left: 0;
     }
 }
 

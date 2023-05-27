@@ -43,7 +43,7 @@
 }
 
 .title-mdxl1{
-    @include mixins.set-fonts(vars.$ff, vars.$fw-semibold, vars.$fs-lg, vars.$clr-white);
+    @include mixins.set-fonts(vars.$ff, vars.$fw-reg, vars.$fs-lg, vars.$clr-white);
 }
 
 .title-mdxl2{
@@ -63,7 +63,7 @@
 }
 
 .title-xlgsb{
-    @include mixins.set-fonts(vars.$ff, vars.$fw-light, vars.$fs-xlg2, vars.$clr-mostaza-001);
+    @include mixins.set-fonts(vars.$ff, vars.$fw-med, vars.$fs-xlg2, vars.$clr-mostaza-001);
 }
 
 .title-white {
@@ -90,4 +90,36 @@
     @include mixins.set-color(vars.$clr-verde-002);
     font-size: 1.5625rem;
     font-weight: 600;
+}
+
+@media  (min-width: 300px) and (max-width: 540px) {
+    .title-xlgsb {
+        font-size: 3rem;
+    }
+
+    .title-mdxl1 {
+        font-size: 1.2rem;
+    }
+}
+
+@media  (min-width: 541px) and (max-width: 800px) {
+    .title-xlgsb {
+        font-size: 4rem;
+    }
+
+    .title-mdxl1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media  (min-width: 801px) and (max-width: 1200px) {
+    .title-xlgsb {
+        font-size: 4rem;
+        font-weight: vars.$fw-med;
+    }
+
+    .title-mdxl1 {
+        font-size: 1.5rem;
+    }
 }

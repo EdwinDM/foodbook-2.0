@@ -41,7 +41,7 @@
                                 <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Categoría</a>
                                 <ul class="dropdown-menu dropdown-options">
                                     <li v-for="(category, index) in categories" class="nav-item">
-                                        <recipe-categories :name="category.name"></recipe-categories>
+                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
                                     </li>
                                 </ul>
                             </li>
@@ -50,7 +50,7 @@
                                     aria-expanded="false">Dificultad</a>
                                 <ul class="dropdown-menu dropdown-options">
                                     <li v-for="(category, index) in categories" class="nav-item">
-                                        <recipe-categories :name="category.name"></recipe-categories>
+                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
                                     </li>
                                 </ul>
                             </li>
@@ -59,7 +59,7 @@
                                     aria-expanded="false">Ocasiones</a>
                                 <ul class="dropdown-menu dropdown-options">
                                     <li v-for="(category, index) in categories" class="nav-item">
-                                        <recipe-categories :name="category.name"></recipe-categories>
+                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
                                     </li>
                                 </ul>
                             </li>

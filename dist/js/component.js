@@ -61,7 +61,34 @@ const app = Vue.createApp({
         );
     },
     methods: {
-
+        onClickSelectedCategory(category) {
+            axios({
+                method: 'get',
+                url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c='+category
+            })
+            .then(
+                (response) => {
+                    let items = response.data.meals;
+                    this.recipes = [];
+                    items.forEach(element => {
+                        this.recipes.push({ 
+                            id: element.idMeal,
+                            image: element.strMealThumb,
+                            name: element.strMeal,
+                            category: category,
+                            time: "20 mins",
+                            level: "Easy",
+                            likes: 18,
+                            ingredients: "NA",
+                            instructions: "NA"
+                        });
+                    });
+                }
+            )
+            .catch(
+                error => console.log(error)
+            );
+        }
     }
 })
 

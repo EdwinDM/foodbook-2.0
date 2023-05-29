@@ -40,7 +40,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Categoría</a>
                                 <ul class="dropdown-menu dropdown-options">
-                                    <li v-for="(category, index) in categories" class="nav-item">
+                                    <li v-for="(category) in categories" class="nav-item">
                                         <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
                                     </li>
                                 </ul>
@@ -49,7 +49,7 @@
                                 <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">Dificultad</a>
                                 <ul class="dropdown-menu dropdown-options">
-                                    <li v-for="(category, index) in categories" class="nav-item">
+                                    <li v-for="(category) in categories" class="nav-item">
                                         <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
                                     </li>
                                 </ul>
@@ -58,14 +58,14 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">Ocasiones</a>
                                 <ul class="dropdown-menu dropdown-options">
-                                    <li v-for="(category, index) in categories" class="nav-item">
+                                    <li v-for="(category) in categories" class="nav-item">
                                         <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                         <form class="search-container d-flex justify-content-center align-items-center" action="search.html" method="get" role="search">
-                            <input class="form-control rounded-5 search-bar" type="search" placeholder="¿Qué vas cocinar hoy?" aria-label="Search">
+                            <input class="form-control rounded-5 search-bar" name="c" type="search" placeholder="¿Qué vas cocinar hoy?" aria-label="Search">
                             <button class="mt-1" type="submit"><i class="search-button fa-solid fa-magnifying-glass"></i></button>
                         </form>
                         <li class="nav-item dropdown list-unstyled ms-4">
@@ -114,6 +114,8 @@
 
         <!-- Poster -->
 
+        <!-- 10 vot -->
+
         <section class="nav-ten">
             <div class="container-ld">
                 <div class="w-100">
@@ -121,8 +123,8 @@
                         <h2 class="title-options text-center">Top 10 recetas</h2>
                     </div>
                     <div class="row row-1">
-                        <div v-for="(item, index) in recipes_top" class='col recipe-card'>
-                            <recipe-card :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes" :index="index"></recipe-card>
+                        <div v-for="(item) in recipes_top" class='col recipe-card'>
+                            <recipe-card :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes" :id="item.id"></recipe-card>
                         </div>
                     </div>
                 </div>
@@ -136,8 +138,8 @@
         <section class="nav-poster-2">
             <div class="text-center">
                 <h2 class="title-lg mb-5">¡Lo más nuevo!</h2>
-                <div v-for="(item, index) in recent_recipe" class='poster-bg'>
-                    <recent-recipe :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes" :index="index"></recent-recipe>
+                <div v-for="(item) in recent_recipe" class='poster-bg'>
+                    <recent-recipe :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes" :id="item.id"></recent-recipe>
                 </div>
             </div>
         </section>
@@ -154,8 +156,8 @@
                         <h2 class='filtro-todas subtitle-filter'>(Todas las Recetas)</h2>
                     </div>
                     <div class="row row-1">
-                        <div v-for="(item, index) in recipes" class='col recipe-card'>
-                            <recipe-card :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes" :index="index"></recipe-card>
+                        <div v-for="(item) in recipes" class='col recipe-card'>
+                            <recipe-card :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes" :id="item.id"></recipe-card>
                         </div>
                     </div>
                 </div>

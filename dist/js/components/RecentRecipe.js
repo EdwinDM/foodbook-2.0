@@ -27,8 +27,8 @@ app.component('recent-recipe', {
             type: Number,
             default: 10
         },
-        index:{
-            type:Number
+        id:{
+            type:String
         }
     },
     methods:{
@@ -47,7 +47,7 @@ app.component('recent-recipe', {
                     <a class='lbl category-base' href='#'>{{ category }}</a>
                     <a class='lbl facil' href='#'>{{ level }}</a>
                 </div>
-                <a href='details.html' class='btn-green-xl mt-5'>Ver receta</a>
+                <a v-bind:href="'details.html?i='+ id" class='btn-green-xl mt-5'>Ver receta</a>
             </div>
         </div>
     </div>`

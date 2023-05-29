@@ -27,8 +27,8 @@ app.component('recipe-card', {
             type: Number,
             default: 10
         },
-        index:{
-            type:Number
+        id:{
+            type:String
         }
     },
     methods:{
@@ -36,7 +36,7 @@ app.component('recipe-card', {
     },
     template:
     /*html*/
-    `<a href='details.html'>
+    `<a v-bind:href="'details.html?i='+ id">
         <div class='card-bg'>
             <img class='card-image' v-bind:src='image'>
             <div class='card-data'>

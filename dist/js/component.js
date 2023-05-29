@@ -7,6 +7,9 @@ const app = Vue.createApp({
             recipes: [],
             recipes_top: [],
             recent_recipe: [],
+            selected_recipe: [],
+            related_recipes: [],
+            search_recipes: [],
             categories: []
         }
     },
@@ -54,11 +57,72 @@ const app = Vue.createApp({
                 });
                 this.recipes_top = this.recipes.slice(0, 10);
                 this.recent_recipe = this.recipes.slice(0, 1);
+                this.related_recipes = this.recipes.slice(0, 5);
             },
         )
         .catch(
             error => console.log(error)
         );
+
+// -------------------------------------------------------- Selected Recipe -------------------------------------------------------- //
+
+        let id = window.location.search;
+        axios({
+            method: 'get',
+            url: 'https://www.themealdb.com/api/json/v1/1/lookup.php'+id
+        })
+        .then(
+            (response) => {
+                let recipe = response.data.meals;
+                recipe.forEach(element => {
+                    this.selected_recipe.push({ 
+                        id: element.idMeal,
+                        image: element.strMealThumb,
+                        name: element.strMeal,
+                        category: "Seafood",
+                        time: "20 mins",
+                        level: "Easy",
+                        likes: 18,
+                        ingredients: "NA",
+                        instructions: "NA"
+                    });
+                });
+            },
+        )
+        .catch(
+            error => console.log(error)
+        );
+
+// -------------------------------------------------------- Search Recipes -------------------------------------------------------- //
+
+        let category = window.location.search;
+        console.log(category);
+        axios({
+            method: 'get',
+            url: 'https://www.themealdb.com/api/json/v1/1/filter.php'+category
+        })
+        .then(
+            (response) => {
+                let items = response.data.meals;
+                items.forEach(element => {
+                    this.search_recipes.push({ 
+                        id: element.idMeal,
+                        image: element.strMealThumb,
+                        name: element.strMeal,
+                        category: category,
+                        time: "20 mins",
+                        level: "Easy",
+                        likes: 18,
+                        ingredients: "NA",
+                        instructions: "NA"
+                    });
+                });
+            }
+        )
+        .catch(
+            error => console.log(error)
+        );
+        
     },
     methods: {
         onClickSelectedCategory(category) {

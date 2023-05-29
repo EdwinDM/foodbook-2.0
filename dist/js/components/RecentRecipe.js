@@ -1,4 +1,4 @@
-app.component('recipe-card', {
+app.component('recent-recipe', {
     props:{
         image:{
             type: String
@@ -36,25 +36,19 @@ app.component('recipe-card', {
     },
     template:
     /*html*/
-    `<a href='details.html'>
-        <div class='card-bg'>
-            <img class='card-image' v-bind:src='image'>
-            <div class='card-data'>
-                <div class='card-info'>
-                    <div class='card-text'>
-                        <h2 class='card-title'>{{ name }}</h2>
-                        <h3 class='card-time'>{{ time }}</h3>
-                    </div>
-                    <div class='card-likes'>
-                        <i class='fa-solid fa-heart hearth'></i>
-                        <h2 class='like-count'>{{ likes }}</h2>
-                    </div>
-                </div>
-                <div class='card-labels'>
-                    <a class='lbl category-base'>{{ category }}</a>
+    `<img class='img-poster' v-bind:src='image'>
+    <div class='poster-data '>
+        <div class='poster-info justify-content-center'>
+            <div class='poster-text'>
+                <h2 class='poster-title'>{{ name }}</h2>
+                <p class='poster-description mt-3'>{{ description }}</p>
+                <p class='poster-time justify-content-start'>{{ time }}</p>
+                <div class='poster-labels'>
+                    <a class='lbl category-base' href='#'>{{ category }}</a>
                     <a class='lbl facil' href='#'>{{ level }}</a>
                 </div>
+                <a href='details.html' class='btn-green-xl mt-5'>Ver receta</a>
             </div>
         </div>
-    </a>`
+    </div>`
 })

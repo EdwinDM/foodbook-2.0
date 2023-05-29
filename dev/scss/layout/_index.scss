@@ -5,22 +5,80 @@
 
 .nav-ten {
     @include mixins.nav-ten(vars.$clr-white);
+    @include media-queries.mobile {
+        height: fit-content!important ;
+        padding-top: 2rem;
+    }
+
+    @include media-queries.tablet {
+        height: fit-content!important ;
+    }
+
+    @include media-queries.desktop {
+        height: fit-content!important ;
+        margin: auto;
+    }
 }
 
 .nav-ten2 {
     @include mixins.nav-ten(vars.$clr-white);
+    @include media-queries.mobile {
+        height: fit-content!important;
+        display: flex;
+        padding-top: 2rem;
+    }
+
+    @include media-queries.tablet {
+        height: fit-content!important;
+        display: flex;
+    }
+
+    @include media-queries.desktop {
+        height: fit-content !important;
+        display: flex;
+        margin: auto;
+    }
 }
 
 .nav-ten-search {
     @include mixins.nav-ten-search(vars.$clr-white);
 }
 
+.container-poster {
+    @include media-queries.all {
+        zoom: .3;
+        scale: .5;
+    }
+}
+
 .nav-poster {
     @include mixins.nav-poster;
+    @include media-queries.all {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .nav-poster-2 {
     @include mixins.nav-poster;
+    @include media-queries.mobile {
+        width: 100vw;
+        height: 74vh;
+        margin-bottom: 3.125rem;
+    }
+
+    @include media-queries.tablet {
+        width: 100vw;
+        height: 75vh;
+    }
+
+    @include media-queries.desktop {
+        width: 100vw;
+        height: 75vh;
+    }
 }
 
 .container-recetario {
@@ -29,6 +87,23 @@
 
 .img-poster {
     @include mixins.img-poster;
+    @include media-queries.mobile {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 0;
+    }
+
+    @include media-queries.tablet {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 0;
+    }
+
+    @include media-queries.desktop {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 0;
+    }
 }
 
 .poster-image-container {
@@ -45,6 +120,20 @@
 
 .poster-data {
     @include mixins.poster-data;
+    @include media-queries.mobile {
+        width: 100vw;
+        border-radius: 0;
+    }
+
+    @include media-queries.tablet {
+        width: 100vw;
+        border-radius: 0;
+    }
+
+    @include media-queries.desktop {
+        width: 100vw;
+        border-radius: 0;
+    }
 }
 
 .recipe-poster-data {
@@ -57,6 +146,20 @@
 
 .poster-bg {
     @include mixins.poster-bg;
+    @include media-queries.mobile {
+        width: 100vw;
+        border-radius: 0px;
+    }
+
+    @include media-queries.tablet {
+        width: 100vw;
+        border-radius: 0px;
+    }
+
+    @include media-queries.desktop {
+        width: 100vw;
+        border-radius: 0px;
+    }
 }
 
 .poster-info {
@@ -73,6 +176,9 @@
 
 .poster-text {
     @include mixins.poster-text;
+    @include media-queries.mobile {
+        scale: .7;
+    }
 }
 
 .poster-animation-bg {
@@ -89,17 +195,34 @@
 
 .container-ld {
     @include mixins.container-ld;
+    @include media-queries.mobile {
+        width: 100%;
+    }
+}
+
+.container-wrapper {
+    @include media-queries.mobile {
+        width: 22.8125rem;
+    }
+
+    @include media-queries.tablet {
+        width: 28.125rem;
+    }
 }
 
 .wrapper{
-    box-sizing: content-box;
-    background-color: transparent;
-    height: 200px;
-    padding: 50px 30px;
-    display: flex;
-    border-radius: 8px;
-    box-shadow: 0 20px 25px rgba(0,0,0,0.2);
-    margin-bottom: -60px;
+    @include mixins.wrapper;
+    @include media-queries.mobile {
+        height: 85px;
+    }
+
+    @include media-queries.tablet {
+        height: 120px;
+    }
+
+    @include media-queries.desktop {
+        height: 120px;
+    }
 }
 
 .words{
@@ -249,215 +372,5 @@ span{
 
     100% {
         transform: scale(1);
-    }
-
-}
-
-@media  (min-width: 300px) and (max-width: 540px) {
-
-    .wrapper{
-        height: 85px;
-    }
-
-    .container-wrapper {
-        width: 22.8125rem;
-    }
-
-    .container-ld {
-        width: 100%;
-    }
-
-    .container-poster {
-        zoom: .3;
-        scale: .5;
-    }
-
-    .subtitle-filter {
-        display: flex;
-        justify-content: center;
-    }
-    
-    .nav-ten {
-        height: fit-content!important ;
-        padding-top: 2rem;
-    
-    }
-
-    .nav-ten2 {
-        height: fit-content!important;
-        display: flex;
-        padding-top: 2rem;
-    }
-
-    .btn-green {
-        font-size: 40px;
-    }
-
-    .btn-green-poster2 {
-        margin: 10px 0 0 0!important;
-    }
-
-    .nav-poster {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .nav-poster-2 {
-        width: 100vw;
-        height: 74vh;
-        margin-bottom: 3.125rem;
-    }
-
-    .container-poste2 {
-        height: 100%;
-    }
-
-    .poster-bg {
-        width: 100vw;
-        border-radius: 0;
-    }
-
-    .img-poster {
-        width: 100%;
-        object-fit: cover;
-        border-radius: 0;
-    }
-
-    .poster-data {
-        width: 100vw;
-        border-radius: 0;
-    }
-}
-
-@media  (min-width: 541px) and (max-width: 800px) {
-
-    .wrapper{
-        height: 120px;
-    }
-
-    .container-wrapper {
-        width: 450px;
-    }
-
-    .container-poster {
-        zoom: .3;
-        scale: .5;
-    }
-        
-    .nav-ten {
-        height: fit-content!important ;
-    }
-
-    .nav-ten2 {
-        height: fit-content!important;
-        display: flex;
-    }
-
-    .btn-green {
-        font-size: 40px;
-    }
-
-    .btn-green-poster2 {
-        margin: 10px 0 0 0!important;
-    }
-
-    .nav-poster {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .nav-poster-2 {
-        width: 100vw;
-        height: 75vh;
-    }
-
-    .container-poste2 {
-        height: 100%;
-    }
-
-    .poster-bg {
-        width: 100vw;
-        border-radius: 0;
-    }
-
-    .img-poster {
-        width: 100%;
-        object-fit: cover;
-        border-radius: 0;
-    }
-
-    .poster-data {
-        width: 100vw;
-        border-radius: 0;
-    }
-}
-
-@media  (min-width: 801px) and (max-width: 1200px) {
-
-    .wrapper{ 
-        height: 120px;
-    }
-
-    .container-poster {
-        zoom: .3;
-        scale: .5;
-    }
-        
-    .nav-ten {
-        height: fit-content!important ;
-        margin: auto;
-    }
-
-    .nav-ten2 {
-        height: fit-content !important;
-        display: flex;
-        margin: auto;
-    }
-
-    .btn-green {
-        font-size: 40px;
-    }
-
-    .btn-green-poster2 {
-        margin: 10px 0 0 0!important;
-    }
-
-    .nav-poster {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .nav-poster-2 {
-        width: 100vw;
-        height: 75vh;
-    }
-
-    .container-poste2 {
-        height: 100%;
-    }
-
-    .poster-bg {
-        width: 100vw;
-        border-radius: 0;
-    }
-
-    .img-poster {
-        width: 100%;
-        object-fit: cover;
-        border-radius: 0;
-    }
-
-    .poster-data {
-        width: 100vw;
-        border-radius: 0;
     }
 }

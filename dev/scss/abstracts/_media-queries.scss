@@ -1,12 +1,51 @@
-$phone : '(max-width: 480px)';
-$tablet-portrait: '(max-width: 767px)';
-$tablet-landscape: '(min-width: 768px) and (max-width: 979px)';
-$large-desktop: '(min-width: 1200px)';
-$non-retina: 'screen and (-webkit-max-device-pixel-ratio: 1)';
-$retina: '(min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5),(min-resolution: 144dpi), (min-resolution: 1.5dppx)';
+/*------------------------ General Media Queries ------------------------*/
 
-@mixin respond-to($media) {
-    @media only screen and #{$media} {
+@mixin mobile-s {
+    @media (min-width: 0px) and (max-width: 320px) {
+        @content;
+    }
+}
+
+@mixin form {
+    @media (max-width: 473px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (min-width: 200px) and (max-width: 540px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 541px) and (max-width: 800px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 801px) and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin all {
+    @media (min-width: 0px) and (max-width: 1200px) {
+        @content;
+    }
+}
+
+/*------------------------ Header Media Queries ------------------------*/
+
+@mixin navbar {
+    @media (992px <= width <= 1270px) {
+        @content;
+    }
+}
+
+@mixin header {
+    @media (max-width: 991px) {
         @content;
     }
 }

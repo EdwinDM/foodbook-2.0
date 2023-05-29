@@ -44,6 +44,17 @@
 
 .title-mdxl1{
     @include mixins.set-fonts(vars.$ff, vars.$fw-reg, vars.$fs-lg, vars.$clr-white);
+    @include media-queries.mobile {
+        font-size: 1.2rem;
+    }
+
+    @include media-queries.tablet {
+        font-size: 1.5rem;
+    }
+
+    @include media-queries.desktop {
+        font-size: 1.5rem;
+    }
 }
 
 .title-mdxl2{
@@ -56,6 +67,18 @@
 
 .title-lg{
     @include mixins.set-fonts(vars.$ff, vars.$fw-bold, vars.$fs-lg1, vars.$clr-white);
+    @include media-queries.mobile {
+        font-size: 2.5rem;
+        margin-top: 6.25rem;
+    }
+
+    @include media-queries.tablet {
+        margin-top: 6.25rem;
+    }
+
+    @include media-queries.desktop {
+        margin-top: 6.25rem;
+    }
 }
 
 .title-xlg{
@@ -64,6 +87,17 @@
 
 .title-xlgsb{
     @include mixins.set-fonts(vars.$ff, vars.$fw-med, vars.$fs-xlg2, vars.$clr-mostaza-001);
+    @include media-queries.mobile {
+        font-size: 3rem;
+    }
+
+    @include media-queries.tablet {
+        font-size: 4rem;
+    }
+
+    @include media-queries.desktop {
+        font-size: 4rem;
+    }
 }
 
 .title-white {
@@ -73,6 +107,18 @@
 
 .title-options {
     @include mixins.set-fonts(vars.$ff, vars.$fw-bold, vars.$fs-lg1, vars.$clr-negro-001);
+    @include media-queries.mobile {
+        font-size: 2.5rem;
+        margin-top: 30px;
+    }
+
+    @include media-queries.tablet {
+        width: 100%;
+    }
+
+    @include media-queries.desktop {
+        margin-top: 2rem
+    }
 }
 
 .forms-link {
@@ -89,62 +135,4 @@
     @include mixins.set-color(vars.$clr-verde-002);
     font-size: 1.5625rem;
     font-weight: 600;
-}
-
-@media  (min-width: 300px) and (max-width: 540px) {
-    .title-xlgsb {
-        font-size: 3rem;
-    }
-
-    .title-mdxl1 {
-        font-size: 1.2rem;
-    }
-
-    .title-options {
-        font-size: 2.5rem;
-        margin-top: 30px;
-    }
-
-    .title-lg {
-        font-size: 2.5rem;
-        margin-top: 6.25rem;
-    }
-}
-
-@media  (min-width: 541px) and (max-width: 800px) {
-    .title-xlgsb {
-        font-size: 4rem;
-    }
-
-    .title-mdxl1 {
-        font-size: 1.5rem;
-    }
-
-    .title-options {
-        width: 100%;
-    }
-
-    .title-lg {
-        margin-top: 6.25rem;
-    }
-}
-
-
-@media  (min-width: 801px) and (max-width: 1200px) {
-    .title-xlgsb {
-        font-size: 4rem;
-        font-weight: vars.$fw-med;
-    }
-
-    .title-mdxl1 {
-        font-size: 1.5rem;
-    }
-
-    .title-options {
-        margin-top: 2rem;
-    }
-
-    .title-lg {
-        margin-top: 6.25rem;
-    }
 }

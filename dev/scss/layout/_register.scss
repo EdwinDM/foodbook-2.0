@@ -5,44 +5,8 @@
 
 .register-data {
     @include mixins.register-data;
-}
-
-@media (max-width: 473px) {
-    .register-data {
+    @include media-queries.form {
         width: 330px;
         height: 440px;
-    }
-
-    .mv-title {
-        font-size: 1.5rem;
-    }
-
-    .text-input {
-        width: 250px;
-        height: 30px;
-        margin: 0 40px;
-        border: 1.5px solid var(--clr-negro-001);
-        font-size: 13px;
-    }
-
-    .btn {
-        font-size: .8125rem;
-        padding: 3px 15px;
-    }
-
-    .forms-link-mv {
-        font-size: 10px;
-    }
-
-    .mt-mv1 {
-        margin-top: 30px;
-    }
-
-    .mt-mv2 {
-        margin-top: 40px;
-    }
-
-    .mt-mv3 {
-        margin-top: 1.25rem!important;
     }
 }

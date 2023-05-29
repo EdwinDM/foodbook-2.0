@@ -7,10 +7,6 @@
     .border-line {
         @include mixins.border-line(.15rem, vars.$clr-negro-001);
     }
-
-    .border-nav-line {
-        @include mixins.border-line(.19rem, vars.$clr-verde-001);
-    }
 /* lines */
 
 /* Forms */
@@ -27,11 +23,49 @@
     }
 
     .bg-index {
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(../imgs/bg-base.svg) no-repeat;
-        background-size: cover;
-        width: 100vw;
+        @include mixins.details-bg-dark-base;
         height: 100vh;
-        overflow-x: hidden;
+    }
+
+    .text-input {
+        @include mixins.text-input;
+        @include media-queries.form {
+            width: 250px;
+            height: 30px;
+            margin: 0 40px;
+            border: 1.5px solid vars.$clr-negro-001;
+            font-size: 13px;
+        }
+    }
+
+    .mv-title {
+        @include media-queries.form {
+            font-size: 1.5rem;
+        }
+    }
+
+    .forms-link-mv {
+        @include media-queries.form {
+            font-size: 10px;
+        }
+    }
+
+    .mt-mv1 {
+        @include media-queries.form {
+            margin-top: 30px;
+        }
+    }
+    
+    .mt-mv2 {
+        @include media-queries.form {
+            margin-top: 40px;
+        }
+    }
+    
+    .mt-mv3 {
+        @include media-queries.form {
+            margin-top: 1.25rem!important;
+        }
     }
 /* Forms */
 
@@ -39,6 +73,13 @@
     .btn-green {
         @include mixins.btn-base(vars.$fs-rg2, vars.$fw-semibold);
         @include mixins.btn-style(vars.$clr-negro-001, vars.$clr-verde-001, vars.$clr-verde-001, vars.$clr-white, vars.$clr-terracota-001);
+        @include media-queries.all {
+            font-size: 40px;
+        }
+        @include media-queries.form {
+            font-size: .8125rem!important;
+            padding: 3px 15px;
+        }
     }
 
     .btn-green-xl {
@@ -211,10 +252,6 @@
         @include mixins.recipe-card();
     }
 
-    .recipe-card-1 {
-        @include mixins.recipe-card-1();
-    }
-
     .recipe-details-image {
         @include mixins.recipe-details-image();
     }
@@ -286,8 +323,7 @@
     @include mixins.image-upload-wrap;
 }
 
-.image-dropping,
-.image-upload-wrap:hover {
+.image-dropping:hover {
     background: #1AA059;
     border-radius: 30px;
 }
@@ -304,10 +340,15 @@
     @include mixins.drag-text;
 }
 
+
+
 /* Input Data Recipe */
 
 .input-data-recipe {
     @include mixins.input-data-recipe();
+    @include media-queries.mobile {
+        font-size: 14px;
+    }
 }
 
 .input-ingredients {
@@ -316,6 +357,9 @@
 
 .input-s {
     @include mixins.input-w-h(196px, 60px);
+    @include media-queries.mobile {
+        width: 123px;
+    }
 }
 
 .input-m {
@@ -324,6 +368,9 @@
 
 .input-l {
     @include mixins.input-w-h(310px, 60px);
+    @include media-queries.mobile {
+        width: 184px;
+    }
 }
 
 .input-xl {
@@ -332,109 +379,5 @@
 
 .input-2xl {
     @include mixins.input-w-h(650px, 160px);
-}
-
-@media (min-width: 300px) and (max-width: 540px) {
-
-    .poster-bg {
-        width: 100vw;
-        height: 115vh;
-        border-radius: 30px;
-        position: relative;
-        justify-content: center;
-    }
-
-    .img-poster {
-        width: 100vw;
-        height: 65vh;
-        object-fit: contain;
-        display: flex;
-    }
-
-    .poster-data {
-        bottom: 0px;
-        width: 100vw;
-        height: 66vh;
-        background: linear-gradient(rgba(252, 252, 252, 0.7), rgba(219, 217, 217, 0.8));
-        align-items: center;
-        justify-content: center;
-        display: grid;
-        position: absolute
-    }
-
-    .poster-text {
-        scale: .7;
-    }
-}
-
-@media  (min-width: 541px) and (max-width: 800px) {
-
-    .recipe-card {
-        scale: 1.2;
-        
-    }
-
-    .img-poster {
-        width: 140vw;
-        height: 65vh;
-        object-fit: contain;
-        display: flex;
-    }
-
-    .poster-data {
-        bottom: 0px;
-        width: 100vw;
-        height: 52vh;
-        background: linear-gradient(rgba(252, 252, 252, 0.7), rgba(219, 217, 217, 0.8));
-    
-        align-items: center;
-        justify-content: center;
-        display: grid;
-    
-        position: absolute
-    }
-
-
-    .poster-bg {
-        width: 100vw;
-        height: 115vh;
-        border-radius: 30px;
-        position: relative;
-        justify-content: center;
-    }
-
-
-}
-
-@media  (min-width: 820px) and (max-width: 1200px) {
-
-    .img-poster {
-        width: 140vw;
-        height: 65vh;
-        object-fit: contain;
-        display: flex;
-    }
-
-    .poster-data {
-        bottom: 0px;
-        width: 100vw;
-        height: 50vh;
-        background: linear-gradient(rgba(252, 252, 252, 0.7), rgba(219, 217, 217, 0.8));
-    
-        align-items: center;
-        justify-content: center;
-        display: grid;
-    
-        position: absolute
-    }
-
-
-    .poster-bg {
-        width: 100vw;
-        height: 115vh;
-        border-radius: 30px;
-        position: relative;
-        justify-content: center;
-    }
 }
 

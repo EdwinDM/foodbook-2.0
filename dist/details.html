@@ -107,8 +107,8 @@
         <section class="details-bg-dark-base">
             <nav class="details-container-base d-flex justify-content-center align-items-center details-container-base">
                 <div class="border-details w-100 d-flex justify-content-center align-items-center">
-                    <div v-for="(item) in selected_recipe" class="row h-100 justify-content-center details-border">
-                        <recipe-details :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes" :id="item.id"></recipe-details>
+                    <div v-for="(item, index) in selected_recipe" class="row h-100 justify-content-center details-border">
+                        <recipe-details :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes" :id="item.id" :index="index" v-on:recipelike="onClickRecipeLike"></recipe-details>
                     </div>
                 </div>
             </nav>

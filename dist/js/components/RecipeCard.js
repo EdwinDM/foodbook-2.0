@@ -29,6 +29,9 @@ app.component('recipe-card', {
         },
         id:{
             type:String
+        },
+        index:{
+            type:String
         }
     },
     methods:{

@@ -29,10 +29,16 @@ app.component('recipe-details', {
         },
         id:{
             type:String
+        },        
+        index:{
+            type:String
         }
     },
     methods:{
-
+        onClickLike(){
+            this.$emit('recipelike', this.index);
+            
+        },
     },
     template:
     /*html*/
@@ -51,7 +57,7 @@ app.component('recipe-details', {
                             <h3 class="details-time ms-3">{{ time }}</h3>
                         </div>
                         <div class="card-likes mt-3">
-                            <a type="button" href="#"><i class="fa-solid fa-heart hearth-xl like"></i></a>
+                            <a type="button" v-on:click="onClickLike()"><i class="fa-solid fa-heart hearth-xl like"></i></a>
                             <h2 class="like-count-xl mt-4">{{ likes }}</h2>
                         </div>
                     </div>

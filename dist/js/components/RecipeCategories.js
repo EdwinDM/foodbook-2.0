@@ -12,5 +12,5 @@ app.component('recipe-categories', {
     },
     template:
     /*html*/
-    `<a class='dropdown-item' href="#recetas" v-on:click="onClickCategoryButton">{{ name }}</a>`
+    `<a class='dropdown-item' href="index.html#recetas" v-on:click="onClickCategoryButton">{{ name }}</a>`
 })

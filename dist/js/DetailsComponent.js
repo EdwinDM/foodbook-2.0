@@ -19,12 +19,12 @@ const app = Vue.createApp({
                         id: element.idMeal,
                         image: element.strMealThumb,
                         name: element.strMeal,
-                        category: "Seafood",
+                        category: element.strCategory,
                         time: "20 mins",
                         level: "Easy",
-                        likes: 18,
+                        likes: 20,
                         ingredients: "NA",
-                        instructions: "NA"
+                        instructions: element.strInstructions
                     });
                 });
             },

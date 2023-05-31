@@ -10,8 +10,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <!-- Jquery -->
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <!-- BS -->
@@ -21,14 +20,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <!-- Fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <section id="app" class="bg-index">
-        <header class="header-base bg-color d-flex justify-content-center">
+        <header class="header-base d-flex justify-content-center">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <div class="d-flex align-items-center justify-content-between">
@@ -40,44 +37,32 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Categoría</a>
                                 <ul class="dropdown-menu dropdown-options">
-                                    <li><a class='dropdown-item' href="#">Todas</a></li>
-                                    <li><a class='dropdown-item' href="#">Desayunos</a></li>
-                                    <li><a class='dropdown-item' href="#">Bebidas</a></li>
-                                    <li><a class='dropdown-item' href="#">Cenas</a></li>
-                                    <li><a class='dropdown-item' href="#">Postres</a></li>
-                                    <li><a class='dropdown-item' href="#">Sopas</a></li>
-                                    <li><a class='dropdown-item' href="#">Entradas</a></li>
+                                    <li v-for="(category) in categories" class="nav-item">
+                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">Dificultad</a>
                                 <ul class="dropdown-menu dropdown-options">
-                                    <li><a class='dropdown-item' href="#">Todas</a></li>
-                                    <li><a class='dropdown-item' href="#">Desayunos</a></li>
-                                    <li><a class='dropdown-item' href="#">Bebidas</a></li>
-                                    <li><a class='dropdown-item' href="#">Cenas</a></li>
-                                    <li><a class='dropdown-item' href="#">Postres</a></li>
-                                    <li><a class='dropdown-item' href="#">Sopas</a></li>
-                                    <li><a class='dropdown-item' href="#">Entradas</a></li>
+                                    <li v-for="(category) in categories" class="nav-item">
+                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">Ocasiones</a>
                                 <ul class="dropdown-menu dropdown-options">
-                                    <li><a class='dropdown-item' href="#">Todas</a></li>
-                                    <li><a class='dropdown-item' href="#">Desayunos</a></li>
-                                    <li><a class='dropdown-item' href="#">Bebidas</a></li>
-                                    <li><a class='dropdown-item' href="#">Cenas</a></li>
-                                    <li><a class='dropdown-item' href="#">Postres</a></li>
-                                    <li><a class='dropdown-item' href="#">Sopas</a></li>
-                                    <li><a class='dropdown-item' href="#">Entradas</a></li>
+                                    <li v-for="(category) in categories" class="nav-item">
+                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
                         <form class="search-container d-flex justify-content-center align-items-center" action="search.html" method="get" role="search">
-                            <input class="form-control rounded-5 search-bar" type="search" placeholder="¿Qué vas cocinar hoy?" aria-label="Search">
+                            <input class="form-control rounded-5 search-bar" name="s" type="search" placeholder="¿Qué vas cocinar hoy?" aria-label="Search">
                             <button class="mt-1" type="submit"><i class="search-button fa-solid fa-magnifying-glass"></i></button>
                         </form>
                         <li class="nav-item dropdown list-unstyled ms-4">
@@ -91,7 +76,7 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="admin.html">Mi perfil</a></li>
+                                    <li><a class="dropdown-item" href="user.html">Mi perfil</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
@@ -108,7 +93,7 @@
             <nav class="details-container-base d-flex justify-content-center align-items-center details-container-base">
                 <div class="border-details w-100 d-flex justify-content-center align-items-center">
                     <div v-for="(item, index) in selected_recipe" class="row h-100 justify-content-center details-border">
-                        <recipe-details :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes" :id="item.id" :index="index" v-on:recipelike="onClickRecipeLike"></recipe-details>
+                        <recipe-details :image="item.image" :ingredients="item.ingredients" :category="item.category" :name="item.name" :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes" :id="item.id" :index="index" v-on:recipelike="onClickRecipeLike"></recipe-details>
                     </div>
                 </div>
             </nav>
@@ -220,6 +205,7 @@
     <!-- Components -->
         <script src="js/components/RecipeDetails.js"></script>
         <script src="js/components/RecipeCard.js"></script>
+        <script src="js/components/RecipeCategories.js"></script>
     <!-- Components -->
 
     <script>

@@ -5,30 +5,26 @@ app.component('recent-recipe', {
         },
         category:{
             type: String,
-            default: "recipe category"
+            default: "Almuerzo"
         },
         name:{
-            type: String,
-            default: "recipe name"
+            type: String
         },
         description:{
             type: String,
-            default: "recipe description"
+            default: "Lorem ipsum dolor sit amet, Fusce rhoncus luctus pellentesque. c viverra finibus, erat ex rutrum dolor, eget dapibus velit urna in nibh. In sodales laoreet lectus. Proin malesuada, est sed fermentum dictum"
         },
         time:{
-            type: String,
-            default: "recipe time"
+            type: String
         },
         level:{
-            type: String,
-            default: "recipe level"
+            type: String
         },
         likes:{
-            type: Number,
-            default: 10
+            type: Number
         },
         id:{
-            type:String
+            type: String
         }
     },
     methods:{

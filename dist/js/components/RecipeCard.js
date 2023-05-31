@@ -28,10 +28,10 @@ app.component('recipe-card', {
             default: 10
         },
         id:{
-            type:String
+            type: String
         },
         index:{
-            type:String
+            type: Number
         }
     },
     methods:{

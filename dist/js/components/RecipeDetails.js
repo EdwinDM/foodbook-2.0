@@ -3,6 +3,9 @@ app.component('recipe-details', {
         image:{
             type: String
         },
+        ingredients:{
+            type: String
+        },
         category:{
             type: String,
             default: "recipe category"
@@ -28,16 +31,15 @@ app.component('recipe-details', {
             default: 10
         },
         id:{
-            type:String
+            type: String
         },        
         index:{
-            type:String
+            type: Number
         }
     },
     methods:{
         onClickLike(){
             this.$emit('recipelike', this.index);
-            
         },
     },
     template:
@@ -104,16 +106,7 @@ app.component('recipe-details', {
                 <div class="d-flex w-100 h-50">
                     <div class="text-container ingredients">
                         <h2 class="title-md1">Ingredientes</h2>
-                        <p class="details-text">
-                        <ul>
-                            <li>Arroz</li>
-                            <li>Tomate</li>
-                            <li>Ajo</li>
-                            <li>Aceite</li>
-                            <li>Sal</li>
-                            <li>Achiote</li>
-                        </ul>
-                        </p>
+                        <p class="details-text">{{ ingredients }}</p>
                     </div>
                 </div>
             </div>

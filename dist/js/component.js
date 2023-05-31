@@ -48,12 +48,12 @@ const app = Vue.createApp({
                         id: element.idMeal,
                         image: element.strMealThumb,
                         name: element.strMeal,
-                        category: "Seafood",
+                        category: element.strCategory,
                         time: "20 mins",
                         level: "Easy",
-                        likes: 18,
+                        likes: 20,
                         ingredients: "NA",
-                        instructions: "NA"
+                        instructions: element.strInstructions
                     });
                 });
                 this.recipes_top = this.recipes.slice(0, 10);
@@ -75,19 +75,26 @@ const app = Vue.createApp({
         .then(
             (response) => {
                 let recipe = response.data.meals;
+                let ingredientsList = "";
+                for (let i = 1; i <= 20; i++) {
+                    if(recipe[0]["strIngredient"+i] !="" && recipe[0]["strIngredient"+i] != null ){
+                        ingredientsList += "\n"+recipe[0]["strMeasure"+i] + " - " + recipe[0]["strIngredient"+i] + "\n";
+                    }                         
+                }
                 recipe.forEach(element => {
                     this.selected_recipe.push({ 
                         id: element.idMeal,
                         image: element.strMealThumb,
                         name: element.strMeal,
-                        category: "Seafood",
+                        category: element.strCategory,
                         time: "20 mins",
                         level: "Easy",
-                        likes: 0,
-                        ingredients: "NA",
-                        instructions: "NA"
+                        likes: 20,
+                        ingredients: ingredientsList,
+                        instructions: element.strInstructions
                     });
                 });
+                console.log(this.selected_recipe)
             },
         )
         .catch(
@@ -112,9 +119,9 @@ const app = Vue.createApp({
                         category: element.strCategory,
                         time: "20 mins",
                         level: "Easy",
-                        likes: 18,
+                        likes: 20,
                         ingredients: "NA",
-                        instructions: "NA"
+                        instructions: element.strInstructions
                     });
                 });
             }
@@ -129,7 +136,6 @@ const app = Vue.createApp({
             this.selected_recipe[index].likes += 1;
 
             let id = window.location.search;
-            console.log(id);
             axios({
                 method: 'get',
                 url: 'https://www.themealdb.com/api/json/v1/1/lookup.php'+id
@@ -145,9 +151,9 @@ const app = Vue.createApp({
                             category: element.strCategory,
                             time: "20 mins",
                             level: "Easy",
-                            likes: 18,
+                            likes: 20,
                             ingredients: "NA",
-                            instructions: "NA"
+                            instructions: element.strInstructions
                         });
                     });
                 }
@@ -173,12 +179,12 @@ const app = Vue.createApp({
                             id: element.idMeal,
                             image: element.strMealThumb,
                             name: element.strMeal,
-                            category: category,
+                            category: element.strCategory,
                             time: "20 mins",
                             level: "Easy",
-                            likes: 18,
+                            likes: 20,
                             ingredients: "NA",
-                            instructions: "NA"
+                            instructions: element.strInstructions
                         });
                     });
                 }

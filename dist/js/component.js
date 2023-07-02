@@ -1,4 +1,4 @@
-const app = Vue.createApp({
+const app = Vue.createApp({//prueba e retoma de trabajo
     data() {
         return {
             selectedIndex: 0,

@@ -7,6 +7,10 @@ app.component('recent-recipe', {
             type: String,
             default: "Almuerzo"
         },
+        occasion:{
+            type: String,
+            default: "Almuerzo"
+        },
         name:{
             type: String
         },
@@ -24,7 +28,7 @@ app.component('recent-recipe', {
             type: Number
         },
         id:{
-            type: String
+            type: Number
         }
     },
     methods:{
@@ -41,9 +45,10 @@ app.component('recent-recipe', {
                 <p class='poster-time justify-content-start'>{{ time }}</p>
                 <div class='poster-labels'>
                     <a class='lbl category-base' href='#'>{{ category }}</a>
+                    <a class='lbl category-base' href='#'>{{ occasion }}</a>
                     <a class='lbl facil' href='#'>{{ level }}</a>
                 </div>
-                <a v-bind:href="'details.html?i='+ id" class='btn-green-xl mt-5'>Ver receta</a>
+                <a v-bind:href="'details.html?'+ id" class='btn-green-xl mt-5'>Ver receta</a>
             </div>
         </div>
     </div>`

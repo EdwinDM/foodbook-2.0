@@ -1,13 +1,16 @@
 app.component('recipe-categories', {
     props:{
+        id:{
+            type:Number
+        },
         name:{
             type:String
         }
     },
     methods:{
         onClickCategoryButton(){
-            console.log(this.name);
-            this.$emit('selectedcategory', this.name);
+            console.log(this.id);
+            this.$emit('selectedcategory', this.id);
         }
     },
     template:

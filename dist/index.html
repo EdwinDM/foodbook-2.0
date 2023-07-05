@@ -38,7 +38,7 @@
                                 <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Categoría</a>
                                 <ul class="dropdown-menu dropdown-options">
                                     <li v-for="(category) in categories" class="nav-item">
-                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
+                                        <recipe-categories :id="category.id" :name="category.category" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
                                     </li>
                                 </ul>
                             </li>
@@ -46,8 +46,8 @@
                                 <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">Dificultad</a>
                                 <ul class="dropdown-menu dropdown-options">
-                                    <li v-for="(category) in categories" class="nav-item">
-                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
+                                    <li v-for="(level) in levels" class="nav-item">
+                                        <recipe-categories :id="level.id" :name="level.level" v-on:selectedcategory="onClickSelectedLevel"></recipe-categories>
                                     </li>
                                 </ul>
                             </li>
@@ -55,8 +55,8 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">Ocasiones</a>
                                 <ul class="dropdown-menu dropdown-options">
-                                    <li v-for="(category) in categories" class="nav-item">
-                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
+                                    <li v-for="(occasion) in occasions" class="nav-item">
+                                        <recipe-categories :id="occasion.id" :name="occasion.occasion" v-on:selectedcategory="onClickSelectedOccasion"></recipe-categories>
                                     </li>
                                 </ul>
                             </li>
@@ -121,7 +121,7 @@
                     </div>
                     <div class="row row-1">
                         <div v-for="(item, index) in recipes_top" class='col recipe-card'>
-                            <recipe-card :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes" :id="item.id" :index="index"></recipe-card>
+                            <recipe-card :image="item.image" :category="item.category" :occasion="item.occasion" :name="item.name" :description="item.instructions" :level="item.level" :likes="item.likes" :id="item.id" :index="index"></recipe-card>
                         </div>
                     </div>
                 </div>
@@ -136,7 +136,7 @@
             <div class="text-center">
                 <h2 class="title-lg mb-5">¡Lo más nuevo!</h2>
                 <div v-for="(item, index) in recent_recipe" class='poster-bg'>
-                    <recent-recipe :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes" :id="item.id" :index="index"></recent-recipe>
+                    <recent-recipe :image="item.image" :category="item.category" :occasion="item.occasion" :name="item.name" :description="item.instructions" :level="item.level" :likes="item.likes" :id="item.id" :index="index"></recent-recipe>
                 </div>
             </div>
         </section>
@@ -154,7 +154,7 @@
                     </div>
                     <div class="row row-1">
                         <div v-for="(item, index) in recipes" class='col recipe-card'>
-                            <recipe-card :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes" :id="item.id" :index="index"></recipe-card>
+                            <recipe-card :image="item.image" :category="item.category" :occasion="item.occasion" :name="item.name" :description="item.instructions" :level="item.level" :likes="item.likes" :id="item.id" :index="index"></recipe-card>
                         </div>
                     </div>
                 </div>

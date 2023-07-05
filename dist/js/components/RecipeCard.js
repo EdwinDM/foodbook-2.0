@@ -7,6 +7,10 @@ app.component('recipe-card', {
             type: String,
             default: "recipe category"
         },
+        occasion:{
+            type: String,
+            default: "recipe occasion"
+        },
         name:{
             type: String,
             default: "recipe name"
@@ -14,10 +18,6 @@ app.component('recipe-card', {
         description:{
             type: String,
             default: "recipe description"
-        },
-        time:{
-            type: String,
-            default: "recipe time"
         },
         level:{
             type: String,
@@ -28,7 +28,7 @@ app.component('recipe-card', {
             default: 10
         },
         id:{
-            type: String
+            type: Number
         },
         index:{
             type: Number
@@ -39,14 +39,13 @@ app.component('recipe-card', {
     },
     template:
     /*html*/
-    `<a v-bind:href="'details.html?i='+ id">
+    `<a v-bind:href="'details.html?'+ id">
         <div class='card-bg'>
             <img class='card-image' v-bind:src='image'>
             <div class='card-data'>
                 <div class='card-info'>
                     <div class='card-text'>
                         <h2 class='card-title'>{{ name }}</h2>
-                        <h3 class='card-time'>{{ time }}</h3>
                     </div>
                     <div class='card-likes'>
                         <i class='fa-solid fa-heart hearth'></i>
@@ -55,6 +54,7 @@ app.component('recipe-card', {
                 </div>
                 <div class='card-labels'>
                     <a class='lbl category-base'>{{ category }}</a>
+                    <a class='lbl category-base'>{{ occasion }}</a>
                     <a class='lbl facil' href='#'>{{ level }}</a>
                 </div>
             </div>

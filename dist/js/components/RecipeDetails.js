@@ -1,43 +1,59 @@
 app.component('recipe-details', {
     props:{
-        image:{
+        name: {
+            type: String
+        },
+        image: {
+            type: String
+        },
+        description: {
+            type: String
+        },
+        category: {
+            type: String
+        },
+        preparation_time: {
+            type: Number
+        },
+        cooking_time: {
+            type: Number
+        },
+        total_time: {
+            type: Number
+        },
+        preparation_instructions: {
             type: String
         },
         ingredients:{
+            type: String,
+        },
+        portions: {
+            type: Number
+        },
+        occasion: {
             type: String
         },
-        category:{
-            type: String,
-            default: "recipe category"
-        },
-        name:{
-            type: String,
-            default: "recipe name"
-        },
-        description:{
-            type: String,
-            default: "recipe description"
-        },
-        time:{
-            type: String,
-            default: "recipe time"
-        },
-        level:{
-            type: String,
-            default: "recipe level"
-        },
-        likes:{
-            type: Number,
-            default: 10
-        },
-        id:{
+        level: {
             type: String
-        },        
+        },
+        likes: {
+            type: Number
+        },      
         index:{
             type: Number
         }
     },
-    methods:{
+    computed: {
+        showIngredients() {
+            let formatted = this.ingredients.split("|");
+            return formatted;
+        },
+        showInstructions() {
+            let formatted = this.preparation_instructions.split("|"); //divide las instrucciones por los asteriscos
+            return formatted;
+        }
+    },
+    methods: {
         onClickLike(){
             this.$emit('recipelike', this.index);
         },
@@ -52,11 +68,11 @@ app.component('recipe-details', {
                 <div class="details-data">
                     <div class="details-info">
                         <div class="details-text d-flex align-items-center h-100">
-                            <h3 class="details-time me-3">{{ time }}</h3>
+                            <h3 class="details-time me-3">Prep: {{ preparation_time }} min</h3>
                             <h3 class="w-space-line">|</h3>
-                            <h3 class="details-time mx-3">{{ time }}</h3>
+                            <h3 class="details-time mx-3">Cook: {{ cooking_time }} min</h3>
                             <h3 class="w-space-line">|</h3>
-                            <h3 class="details-time ms-3">{{ time }}</h3>
+                            <h3 class="details-time ms-3">Total: {{ total_time }} min</h3>
                         </div>
                         <div class="card-likes mt-3">
                             <a type="button" v-on:click="onClickLike()"><i class="fa-solid fa-heart hearth-xl like"></i></a>
@@ -65,8 +81,8 @@ app.component('recipe-details', {
                     </div>
                     <div class="details-labels">
                         <a class="lbl category-base" href="#">{{ category }}</a>
-                        <a class='lbl category-base' href='#'>Todas</a>
-                        <a class='lbl category-base' href='#'>0 Porciones</a>
+                        <a class='lbl category-base' href='#'>{{ occasion }}</a>
+                        <a class='lbl category-base' href='#'>{{ portions }} pcs</a>
                         <a class="lbl facil" href="#">{{ level }}</a>
                     </div>
                 </div>
@@ -93,7 +109,7 @@ app.component('recipe-details', {
                 <div class="d-flex w-100 h-50">
                     <div class="text-container description w-100">
                         <h2 class="title-md1">Preparación</h2>
-                        <p class="details-text preparation-text">{{ description }}</p>
+                        <p v-for="(instruction, index) in showInstructions" class="details-text preparation-text"><!--{{index + 1}}.--> {{ instruction }}</p>
                     </div>
                 </div>
             </div>
@@ -106,7 +122,7 @@ app.component('recipe-details', {
                 <div class="d-flex w-100 h-50">
                     <div class="text-container ingredients">
                         <h2 class="title-md1">Ingredientes</h2>
-                        <p class="details-text">{{ ingredients }}</p>
+                        <p v-for="ingredient in showIngredients" class="details-text">- {{ ingredient }}</p>
                     </div>
                 </div>
             </div>

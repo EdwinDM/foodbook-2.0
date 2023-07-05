@@ -209,7 +209,7 @@
     }
 
     .lbl {
-        @include mixins.label(vars.$fs-xsm2, vars.$clr-white);
+        @include mixins.label(.6rem, vars.$clr-white);
     }
 
     .category-base {

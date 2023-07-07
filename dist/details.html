@@ -38,7 +38,7 @@
                                 <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Categoría</a>
                                 <ul class="dropdown-menu dropdown-options">
                                     <li v-for="(category) in categories" class="nav-item">
-                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
+                                        <recipe-categories :id="category.id" :name="category.category" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
                                     </li>
                                 </ul>
                             </li>
@@ -46,8 +46,8 @@
                                 <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">Dificultad</a>
                                 <ul class="dropdown-menu dropdown-options">
-                                    <li v-for="(category) in categories" class="nav-item">
-                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
+                                    <li v-for="(level) in levels" class="nav-item">
+                                        <recipe-categories :id="level.id" :name="level.level" v-on:selectedcategory="onClickSelectedLevel"></recipe-categories>
                                     </li>
                                 </ul>
                             </li>
@@ -55,8 +55,8 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">Ocasiones</a>
                                 <ul class="dropdown-menu dropdown-options">
-                                    <li v-for="(category) in categories" class="nav-item">
-                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
+                                    <li v-for="(occasion) in occasions" class="nav-item">
+                                        <recipe-categories :id="occasion.id" :name="occasion.occasion" v-on:selectedcategory="onClickSelectedOccasion"></recipe-categories>
                                     </li>
                                 </ul>
                             </li>
@@ -71,7 +71,7 @@
                                     aria-expanded="false" src="imgs/profile-image.jpg" alt="Profile image">
                                 <ul class="dropdown-menu user-dropdown mt-2">
                                     <li>
-                                        <h2 class="user-name" href="#">EdwinDM</h2>
+                                        <h2 class="user-name" href="#">{{ logusername }}</h2>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
@@ -80,7 +80,7 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                                    <li><a class="dropdown-item" href="login.html" v-on:click="onClickLogout">Cerrar sesión</a></li>
                                 </ul>
                             </div>
                         </li>

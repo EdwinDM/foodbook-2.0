@@ -1,6 +1,24 @@
-const app = Vue.createApp({//prueba e retoma de trabajo
+const app = Vue.createApp({
     data() {
         return {
+            //Users
+            name: "",
+            username: "",
+            country: "",
+            email: "",
+            password: "",
+            recoverPass: "",
+            online: false,
+            //Users
+
+            //Sesion Iniciada
+            logid: "",
+            logusername: "",
+            logemail:"",
+            logname:"",
+            //Sesion Iniciada
+            
+            //Recetas
             selectedIndex: 0,
             all_recipes: [],
             hasRecipes: true,
@@ -11,10 +29,11 @@ const app = Vue.createApp({//prueba e retoma de trabajo
             related_recipes: [],
             ingredientsA: [],
             search_recipes: [],
-            liked_recipes: [{ id: 1, image: "./images/recipes/sushi.jpg", name: "Sushi", category: "Lunch", time: "20 mins", level: "Easy", likes: 18, ingredients: "300ml Sushi Rice, 100ml Rice wine, 2 tbs Caster Sugar, 3 tbs Mayonnaise, 1 tbs Rice wine, 1 tbs Soy Sauce1 Cucumber", instructions: "STEP 1 TO MAKE SUSHI ROLLS: Pat out some rice.Lay a nori sheet on the mat, shiny-side down.Dip your hands in the vinegared water, then pat handfuls of rice on top in a 1cm thick layer, leaving the furthest edge from you clear. STEP 2 Spread over some Japanese mayonnaise.Use a spoon to spread out a thin layer of mayonnaise down the middle of the rice. STEP 3 Add the filling.Get your child to top the mayonnaise with a line of their favourite fillings – here we’ve used tuna and cucumber. STEP 4 Roll it up.Lift the edge of the mat over the rice, applying a little pressure to keep everything in a tight roll. STEP 5 Stick down the sides like a stamp.When you get to the edge without any rice, brush with a little water and continue to roll into a tight roll. STEP 6 Wrap in cling film.Remove the mat and roll tightly in cling film before a grown-up cuts the sushi into thick slices, then unravel the cling film. STEP 7 TO MAKE PRESSED SUSHI: Layer over some smoked salmon.Line a loaf tin with cling film, then place a thin layer of smoked salmon inside on top of the cling film. STEP 8 Cover with rice and press down. Press about 3cm of rice over the fish, fold the cling film over and press down as much as you can, using another tin if you have one. STEP 9 Tip it out like a sandcastle.Turn block of sushi onto a chopping board.Get a grown-up to cut into fingers, then remove the cling film. STEP 10 TO MAKE SUSHI BALLS: Choose your topping.Get a small square of cling film and place a topping, like half a prawn or a small piece of smoked salmon, on it. Use damp hands to roll walnut-sized balls of rice and place on the topping. STEP 11 Make into tight balls. Bring the corners of the cling film together and tighten into balls by twisting it up, then unwrap and serve." }],
+            liked_recipes: [],
             categories: [],
             levels: [],
             occasions: []
+            //Recetas
         }
     },
     mounted: function () {
@@ -86,7 +105,6 @@ const app = Vue.createApp({//prueba e retoma de trabajo
                     this.recipes.push({ 
                         id: element.id,
                         name: element.name,
-                        total_time: element.name,
                         image: "http://foodbook-admin.test/storage/imgs/"+element.image,
                         category: element.category,
                         occasion: element.occasion,
@@ -116,6 +134,33 @@ const app = Vue.createApp({//prueba e retoma de trabajo
                         name: element.name,
                         image: "http://foodbook-admin.test/storage/imgs/"+element.image,
                         description: element.description,
+                        category: element.category,
+                        occasion: element.occasion,
+                        level: element.level,
+                        likes: element.likes
+                    });
+                });
+            },
+        )
+        .catch(
+            error => console.log(error)
+        );
+
+// -------------------------------------------------------- Liked Recipe -------------------------------------------------------- //
+
+        let userId = localStorage.getItem('id');
+        axios({
+            method: 'get',
+            url: 'http://foodbook-admin.test/api/users/savedrecipes/'+userId
+        })
+        .then(
+            (response) => {
+                let recipes = response.data;
+                recipes.forEach(element => {
+                    this.liked_recipes.push({ 
+                        id: element.id,
+                        name: element.name,
+                        image: "http://foodbook-admin.test/storage/imgs/"+element.image,
                         category: element.category,
                         occasion: element.occasion,
                         level: element.level,
@@ -216,38 +261,51 @@ const app = Vue.createApp({//prueba e retoma de trabajo
         .catch(
             error => console.log(error)
         );
-        
+
+        let token = localStorage.getItem('token');
+        if (token) {
+            this.online = true;
+            this.logid = localStorage.getItem('id');
+            this.logname = localStorage.getItem('name');
+            this.logemail = localStorage.getItem('email');
+            this.logusername = localStorage.getItem('username');
+            console.log(localStorage.getItem('id'));
+            console.log(localStorage.getItem('name'));
+            console.log(localStorage.getItem('email'));
+            console.log(localStorage.getItem('username'));
+        } else {
+            this.online = false;
+        }
+
     },
     methods: {
         onClickRecipeLike(index) {
-            this.selected_recipe[index].likes += 1;
-
             let id = window.location.search;
+            idrecipe = id.substring(1)
+            let logid = localStorage.getItem('id');
+            
             axios({
                 method: 'get',
-                url: 'https://www.themealdb.com/api/json/v1/1/lookup.php'+id
+                url:'http://foodbook-admin.test/api/users/likes/' +logid+ '/' +idrecipe
             })
             .then(
                 (response) => {
-                    let items = response.data.meals;
-                    items.slice(0, 5).forEach(element => {
-                        this.liked_recipes.push({ 
-                            id: element.idMeal,
-                            image: element.strMealThumb,
-                            name: element.strMeal,
-                            category: element.strCategory,
-                            time: "20 mins",
-                            level: "Easy",
-                            likes: 20,
-                            ingredients: "NA",
-                            instructions: element.strInstructions
-                        });
-                    });
+                    let session = response.data;
+                    console.log(session);
                 }
             )
-            .catch(
-                error => console.log(error)
-            );
+
+            axios({
+                method: 'get',
+                url:'http://foodbook-admin.test/api/users/saverecipe/' +logid+ '/' +idrecipe
+               })
+            .then(
+                (response) => {
+                    let session = response.data;
+                    console.log(session);
+                }
+            )
+            this.selected_recipe[index].likes += 1;
         },
 
 
@@ -333,7 +391,101 @@ const app = Vue.createApp({//prueba e retoma de trabajo
             .catch(
                 error => console.log(error)
             );
-        }
+        },
+
+        //--------------------------------------Registrar un Usuario--------------------------------------\\
+
+        onClickRegister(){ 
+            localStorage.removeItem('token');
+            localStorage.removeItem('id');
+            localStorage.removeItem('name');
+            localStorage.removeItem('username');
+            localStorage.removeItem('email');
+            localStorage.removeItem('country');
+
+            let userData = {name: this.name, last_name: this.username, country: this.country, email: this.email, password: this.password};
+            
+            axios.post('http://foodbook-admin.test/api/users/register', userData)
+            .then(response => {
+                window.location.href = 'http://localhost/foodbook-2.0/dist/login.html';
+                console.log('Respuesta del Servidor:', response.data);
+            })
+            .catch(error => {
+                console.error('Error al enviar la solicitud:', error);
+            });
+        },
+
+        onClickLogin(){
+            localStorage.removeItem('token');
+            localStorage.removeItem('id');
+            localStorage.removeItem('name');
+            localStorage.removeItem('username');
+            localStorage.removeItem('email');
+            localStorage.removeItem('country');
+
+            axios({
+                method: 'post',
+                url:'http://foodbook-admin.test/api/users/login?email='+this.email + '&password=' +this.password,
+            })
+            .then(
+                (response) => {
+                    let session = response.data;
+
+                    localStorage.setItem('token', session.accessToken);
+                    localStorage.setItem('id', session.user.id);
+                    localStorage.setItem('name', session.user.name);
+                    localStorage.setItem('username', session.user.last_name);
+                    localStorage.setItem('email', session.user.email);
+                    localStorage.setItem('country', session.user.country);
+                    console.log('Respuesta del Servidor:', response.data);
+                    window.location.href = 'http://localhost/foodbook-2.0/dist/user.html';
+                }
+            )
+            .catch(error => {
+                console.error('Error al enviar la solicitud:', error);
+            });
+        },
+
+        onClickLogout(){
+            localStorage.removeItem('token');
+            localStorage.removeItem('id');
+            localStorage.removeItem('name');
+            localStorage.removeItem('email');
+            localStorage.removeItem('username');
+
+            let token = localStorage.getItem('token');
+            axios({
+                method: 'get',
+                url: 'http://foodbook-admin.test/api/users/logout',
+                headers: {Authorization: `Bearer ${token}`}
+            })
+            .then(
+                (response) => {
+                    let session = response.data;
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('id');
+                    localStorage.removeItem('name');
+                    localStorage.removeItem('email');
+                    localStorage.removeItem('username');
+                }
+            )
+        },
+
+        onClickRecover(){
+            axios({
+                method: 'post',
+                url:'http://foodbook-admin.test/api/users/recoverpassword?email='+this.email,
+            })
+            .then(
+                (response) => {
+                    console.log('Respuesta del Servidor:', response.data.password);
+                    this.recoverPass = response.data.password;
+                }
+            )
+            .catch(error => {
+                console.error('Error al enviar la solicitud:', error);
+            });
+        },
     }
 })
 

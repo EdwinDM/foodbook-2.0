@@ -754,6 +754,7 @@
     left: -109px!important;
     text-align: center;
     margin-top: .9rem!important;
+    padding: 15px!important;
 }
 
 @mixin bars-icon{
@@ -960,8 +961,7 @@
 }
 
 @mixin register-data {
-    width: 29.375rem;
-    height: 30rem;
+    padding: 0 70px 65px 70px;
     background: vars.$clr-white;
     border-radius: 1.875rem;
 }

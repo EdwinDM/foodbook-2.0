@@ -71,7 +71,7 @@
                                     aria-expanded="false" src="imgs/profile-image.jpg" alt="Profile image">
                                 <ul class="dropdown-menu user-dropdown mt-2">
                                     <li>
-                                        <h2 class="user-name" href="#">EdwinDM</h2>
+                                        <h2 class="user-name" href="#">{{ logusername }}</h2>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
@@ -80,7 +80,7 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                                    <li><a class="dropdown-item" href="login.html" v-on:click="onClickLogout">Cerrar sesión</a></li>
                                 </ul>
                             </div>
                         </li>

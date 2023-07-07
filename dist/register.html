@@ -25,74 +25,32 @@
 
 <body>
     <section id="app">
-        <header class="header-base d-flex justify-content-center">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <a href="index.html"><img class="navbar-brand" src="./imgs/logo.png" alt="logo"></a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="bars-icon fa-solid fa-bars"></i></button>
-                    </div>
-                    <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
-                        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto me-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Categoría</a>
-                                <ul class="dropdown-menu dropdown-options">
-                                    <li v-for="(category) in categories" class="nav-item">
-                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">Dificultad</a>
-                                <ul class="dropdown-menu dropdown-options">
-                                    <li v-for="(category) in categories" class="nav-item">
-                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">Ocasiones</a>
-                                <ul class="dropdown-menu dropdown-options">
-                                    <li v-for="(category) in categories" class="nav-item">
-                                        <recipe-categories :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-categories>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="search-container d-flex justify-content-center align-items-center" action="search.html" method="get" role="search">
-                            <input class="form-control rounded-5 search-bar" name="s" type="search" placeholder="¿Qué vas cocinar hoy?" aria-label="Search">
-                            <button class="mt-1" type="submit"><i class="search-button fa-solid fa-magnifying-glass"></i></button>
-                        </form>
-                        <li class="nav-item dropdown list-unstyled ms-4">
-                            <div class="">
-                                <img class="nav-link dropdown-toggle user-img" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false" src="imgs/profile-image.jpg" alt="Profile image">
-                                <ul class="dropdown-menu user-dropdown mt-2">
-                                    <li>
-                                        <h2 class="user-name" href="#">EdwinDM</h2>
-                                    </li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="user.html">Mi perfil</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <form class="bg-base d-flex" enctype="multipart/form-data">
+        <form class="bg-base d-flex" enctype="multipart/form-data" @submit.prevent="onClickRegister"> 
             <div class="container-base d-flex justify-content-center align-items-center">
                 <div class="register-data">
-                    <form-card title="Registrarse" user="Ingrese el usuario" pass="Ingrese la contraseña" advice1="¿Ya tienes una cuenta?" advice2="Inicia sesión" link="login.html"></form-card>
+                    <h2 class="text-center title-mdxl3 text-black mtl mv-title mt-mv2">Registrarse</h2>
+                    <div class="d-flex justify-content-center mt-4">
+                        <input type="text" class="text-input text-center d-flex" placeholder="Ingrese el nombre" v-model="name">
+                    </div>
+                    <div class="d-flex justify-content-center mt-4">
+                        <input type="text" class="text-input text-center d-flex" placeholder="Ingrese el usuario" v-model="username">
+                    </div>
+                    <div class="d-flex justify-content-center mt-4">
+                        <input type="text" class="text-input text-center d-flex" placeholder="Ingrese el país" v-model="country">
+                    </div>
+                    <div class="d-flex justify-content-center mt-4">
+                        <input type="email" class="text-input text-center d-flex" placeholder="Ingrese el email" v-model="email">
+                    </div>
+                    <div class="d-flex justify-content-center mt-4">
+                        <input type="password" class="text-input text-center d-flex" placeholder="Ingrese la contraseña" v-model="password">
+                    </div>
+                    <div class="d-flex justify-content-center mt-3 mobile-version mt-mv1">
+                        <input class="btn-base btn-green mt-3" type="submit" value="Registrarse">
+                    </div>
+                    <h3 class="forms-link text-center mt-4 forms-link-mv mt-mv3">¿Ya tienes una cuenta?</h3>
+                    <div class="d-flex justify-content-center mt-1 mobile-version forms-link-mv">
+                        <a class="forms-link forms-link-hl" href="login.html">Inicia sesión</a>
+                    </div>
                 </div>
             </div>
         </form>
@@ -186,7 +144,6 @@
     <!-- main script -->
 
     <!-- Components -->
-        <script src="js/components/FormCard.js"></script>
         <script src="js/components/RecipeCategories.js"></script>
     <!-- Components -->
 
